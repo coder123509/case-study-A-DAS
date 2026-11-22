@@ -1,0 +1,19 @@
+step,dataset,problem,rows_affected,action,reason
+s02_clean_box_office,sacnilk_daywise,table mixes day rows with 'Week N Collection' and 'Total' rows,6,moved to a separate weekly table,summing day + week rows would double count
+s02_clean_box_office,sacnilk_daywise,currency strings like '₹ 53.60 Cr [En: ...]',21,parsed to float crore + 4 language columns,type casting text -> numeric
+s02_clean_box_office,sacnilk_daywise,days 15-21 marked '** Approx' by the source,7,"kept, flagged is_approx=True",approximate is still the best public figure; flag lets us exclude in robustness checks
+s02_clean_box_office,sacnilk_daywise,language split does not add up to the day total,0,kept day total as the official figure,rounding by the source
+s02_clean_box_office,bh_daywise,days 29-56 only given as 7-day ranges ('Day 29 - Day 35'),4,"kept in weekly table only, NOT spread over days",splitting a week evenly would invent a daily pattern
+s02_clean_box_office,bh_daywise,dates as text '26-Apr-2019 (Fri)',69,parsed with format %d-%b-%Y,text dates -> datetime
+s02_clean_box_office,bh_daywise,Encore late days below ₹0.01 Cr (e.g. '₹0.004 cr.'),9,kept as is (not rounded to 0),small but real; rounding would create fake zero days
+s02_clean_box_office,daily_collections,Sacnilk and Bollywood Hungama disagree on some days (e.g. Day 8: 12.00 vs 12.50),9,keep both columns; primary = Sacnilk where present,"Sacnilk gives the language split; disagreement documented, not hidden"
+s02_clean_box_office,daily_collections,days 22-28 missing in Sacnilk (only a Week-4 total),7,"filled from Bollywood Hungama, source column says so",second trade source for the same day is better than a gap
+s02_clean_box_office,daily_collections,Day 1 reported as 53.10 Cr (BH summary / first Sacnilk estimate) vs 53.60 Cr (both day tables),1,use 53.60,"day tables are the later, revised figures"
+s02_clean_box_office,daily_collections,only NET is given per day; we need GROSS to compare with Doomsday advance (gross),69,gross_cr_est = net x 1.2025 (Sacnilk India gross 445.00 / net 370.05),"single published ratio; estimate, clearly labelled _est"
+s02_clean_box_office,daily_collections,Sacnilk page shows two different net totals: 370.05 (summary) and 373.05 (table total),1,"report lifetime as a range (Sacnilk 370.05 / 373.05, BH 373.22), never as one exact number","source inconsistency, documented"
+s02_clean_box_office,weekly_collections,BH week 3: days add up to 21.07 but BH weekly table says 21.72,7,"kept both; lifetime total taken from published totals, shown as a range",internal inconsistency inside one source
+s02_clean_box_office,weekly_collections,BH week 4: days add up to 8.69 but BH weekly table says 7.59,7,"kept both; lifetime total taken from published totals, shown as a range",internal inconsistency inside one source
+s02_clean_box_office,weekly_collections,Sacnilk stops at week 5; BH runs to week 8,3,kept NULL for Sacnilk weeks 6-8,missing in source
+s02_clean_box_office,advance_booking,'Lac' and '[without block seats]' mixed into numbers ('2.97 Lac [2.61 Lac]'),27,two numeric columns: with and without block seats; Lac x 1e5,type casting + keep both definitions
+s02_clean_box_office,advance_booking,'Others (13 states)' / 'Others (67 cities)' buckets,2,"kept, flagged is_others_bucket","needed for totals, but not a real place for ranking"
+s02_clean_box_office,advance_booking,occupancy missing for 'Others' rows and for language rows,7,kept NULL,not published

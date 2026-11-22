@@ -1,0 +1,149 @@
+# Source: https://www.bollywoodhungama.com/movie/avengers-endgame-english/box-office/
+# Accessed: 2026-11-21. Every <table> on the page, one row per line, cells joined with " | ".
+# Page note: "All amounts in their respective local currencies". Tables 2 and 4 refer to the
+# 2026 re-release (Avengers Endgame: Encore, released 25-Sep-2026) that is listed on the same page.
+# Tables are separated by the marker line "<!--next-->".
+Schedule | Amount
+Opening Day | 53.10 cr.
+End of Opening Weekend | 157.2 cr.
+End of Week 1 | 260.40 cr.
+End of Week 2 | 338.35 cr.
+End of Week 3 | 360.07 cr.
+End of Week 4 | 367.66 cr.
+End of Week 5 | 370.86 cr.
+End of Week 6 | 372.36 cr.
+End of Week 7 | 372.82 cr.
+End of Week 8 | 373.22 cr.
+Total Collection | 373.22 cr.
+<!--next-->
+Schedule | Amount
+Opening Day | 6.07 cr.
+End of Opening Weekend | 19.75 cr.
+End of Week 1 | 26.66 cr.
+End of Week 2 | 30.02 cr.
+End of Week 3 | 31 cr.
+End of Week 4 | 31.15 cr.
+End of Week 5 | 31.186 cr.
+Lifetime Collection | 31.238 cr.
+<!--next-->
+Day | Date | Amount | %± |
+Day 1 | 26-Apr-2019 (Fri) | ₹53.6 cr. | N/A |
+Day 2 | 27-Apr-2019 (Sat) | ₹52.20 cr. | -2.61% |
+Day 3 | 28-Apr-2019 (Sun) | ₹52.85 cr. | +1.25% |
+Day 4 | 29-Apr-2019 (Mon) | ₹31.05 cr. | -41.25% |
+Day 5 | 30-Apr-2019 (Tue) | ₹26.10 cr. | -15.94% |
+Day 6 | 01-May-2019 (Wed) | ₹28.50 cr. | +9.20% |
+Day 7 | 02-May-2019 (Thu) | ₹16.10 cr. | -43.51% |
+Day 8 | 03-May-2019 (Fri) | ₹12.50 cr. | -22.36% |
+Day 9 | 04-May-2019 (Sat) | ₹18.30 cr. | +46.40% |
+Day 10 | 05-May-2019 (Sun) | ₹21.75 cr. | +18.85% |
+Day 11 | 06-May-2019 (Mon) | ₹8.25 cr. | -62.07% |
+Day 12 | 07-May-2019 (Tue) | ₹6.75 cr. | -18.18% |
+Day 13 | 08-May-2019 (Wed) | ₹5.50 cr. | -18.52% |
+Day 14 | 09-May-2019 (Thu) | ₹4.90 cr. | -10.91% |
+Day 15 | 10-May-2019 (Fri) | ₹2.75 cr. | -43.88% |
+Day 16 | 11-May-2019 (Sat) | ₹5.50 cr. | +100.00% |
+Day 17 | 12-May-2019 (Sun) | ₹5.50 cr. | -0.00% |
+Day 18 | 13-May-2019 (Mon) | ₹2.24 cr. | -59.27% |
+Day 19 | 14-May-2019 (Tue) | ₹1.90 cr. | -15.18% |
+Day 20 | 15-May-2019 (Wed) | ₹1.68 cr. | -11.58% |
+Day 21 | 16-May-2019 (Thu) | ₹1.50 cr. | -10.71% |
+Day 22 | 17-May-2019 (Fri) | ₹1.10 cr. | -26.67% |
+Day 23 | 18-May-2019 (Sat) | ₹2.10 cr. | +90.91% |
+Day 24 | 19-May-2019 (Sun) | ₹2.20 cr. | +4.76% |
+Day 25 | 20-May-2019 (Mon) | ₹0.93 cr. | -57.73% |
+Day 26 | 21-May-2019 (Tue) | ₹0.81 cr. | -12.90% |
+Day 27 | 22-May-2019 (Wed) | ₹0.80 cr. | -1.23% |
+Day 28 | 23-May-2019 (Thu) | ₹0.75 cr. | -6.25% |
+Day 29 - Day 35 |  | ₹3.20 cr. |  |
+Day 36 - Day 42 |  | ₹1.50 cr. |  |
+Day 43 - Day 49 |  | ₹0.46 cr. |  |
+Day 50 - Day 56 |  | ₹0.40 cr. |  |
+<!--next-->
+Day | Date | Amount | %± |
+Day 1 | 25-Sep-2026 (Fri) | ₹6.07 cr. | N/A |
+Day 2 | 26-Sep-2026 (Sat) | ₹7.31 cr. | +20.43% |
+Day 3 | 27-Sep-2026 (Sun) | ₹6.37 cr. | -12.86% |
+Day 4 | 28-Sep-2026 (Mon) | ₹1.90 cr. | -70.17% |
+Day 5 | 29-Sep-2026 (Tue) | ₹2.19 cr. | +15.26% |
+Day 6 | 30-Sep-2026 (Wed) | ₹1.56 cr. | -28.77% |
+Day 7 | 01-Oct-2026 (Thu) | ₹1.26 cr. | -19.23% |
+Day 8 | 02-Oct-2026 (Fri) | ₹1.02 cr. | -19.05% |
+Day 9 | 03-Oct-2026 (Sat) | ₹0.89 cr. | -12.75% |
+Day 10 | 04-Oct-2026 (Sun) | ₹0.75 cr. | -15.73% |
+Day 11 | 05-Oct-2026 (Mon) | ₹0.18 cr. | -76.00% |
+Day 12 | 06-Oct-2026 (Tue) | ₹0.21 cr. | +16.67% |
+Day 13 | 07-Oct-2026 (Wed) | ₹0.16 cr. | -23.81% |
+Day 14 | 08-Oct-2026 (Thu) | ₹0.15 cr. | -6.25% |
+Day 15 | 09-Oct-2026 (Fri) | ₹0.12 cr. | -20.00% |
+Day 16 | 10-Oct-2026 (Sat) | ₹0.29 cr. | +141.67% |
+Day 17 | 11-Oct-2026 (Sun) | ₹0.30 cr. | +3.45% |
+Day 18 | 12-Oct-2026 (Mon) | ₹0.07 cr. | -76.67% |
+Day 19 | 13-Oct-2026 (Tue) | ₹0.09 cr. | +28.57% |
+Day 20 | 14-Oct-2026 (Wed) | ₹0.07 cr. | -22.22% |
+Day 21 | 15-Oct-2026 (Thu) | ₹0.04 cr. | -42.86% |
+Day 22 | 16-Oct-2026 (Fri) | ₹0.02 cr. | -50.00% |
+Day 23 | 17-Oct-2026 (Sat) | ₹0.03 cr. | +50.00% |
+Day 24 | 18-Oct-2026 (Sun) | ₹0.03 cr. | -0.00% |
+Day 25 | 19-Oct-2026 (Mon) | ₹0.02 cr. | -33.33% |
+Day 26 | 20-Oct-2026 (Tue) | ₹0.03 cr. | +50.00% |
+Day 27 | 21-Oct-2026 (Wed) | ₹0.01 cr. | -66.67% |
+Day 28 | 22-Oct-2026 (Thu) | ₹0.01 cr. | -0.00% |
+Day 29 | 23-Oct-2026 (Fri) | ₹0.004 cr. | -60.00% |
+Day 30 | 24-Oct-2026 (Sat) | ₹0.01 cr. | N/A |
+Day 31 | 25-Oct-2026 (Sun) | ₹0.01 cr. | -0.00% |
+Day 32 | 26-Oct-2026 (Mon) | ₹0.003 cr. | -70.00% |
+Day 33 | 27-Oct-2026 (Tue) | ₹0.002 cr. | N/A |
+Day 34 | 28-Oct-2026 (Wed) | ₹0.004 cr. | N/A |
+Day 35 | 29-Oct-2026 (Thu) | ₹0.003 cr. | N/A |
+Day 36 | 30-Oct-2026 (Fri) | ₹0.007 cr. | N/A |
+Day 37 | 31-Oct-2026 (Sat) | ₹0.01 cr. | N/A |
+Day 38 | 01-Nov-2026 (Sun) | ₹0.02 cr. | +100.00% |
+Day 39 | 02-Nov-2026 (Mon) | ₹0.005 cr. | -75.00% |
+Day 40 | 03-Nov-2026 (Tue) | ₹0.005 cr. | N/A |
+Day 41 | 04-Nov-2026 (Wed) | ₹0.005 cr. | N/A |
+<!--next-->
+Day | Amount | %±
+Week 1 | 260.40 cr. | N/A
+Week 2 | 77.95 cr. | -70.07%
+Week 3 | 21.72 cr. | -72.14%
+Week 4 | 7.59 cr. | -65.06%
+Week 5 | 3.20 cr. | -57.84%
+Week 6 | 1.50 cr. | -53.12%
+Week 7 | 0.46 cr. | -69.33%
+Week 8 | 0.40 cr. | -13.04%
+<!--next-->
+Day | Amount | %±
+Weekend 1 | 158.65 cr. | N/A
+Weekend 2 | 52.55 cr. | -66.88%
+Weekend 3 | 13.75 cr. | -73.83%
+Weekend 4 | 5.4 cr. | -60.73%
+<!--next-->
+Territory | Amount |
+Mumbai | 101.87 cr. | View
+Delhi-U.P | 66.48 cr. | View
+East Punjab | 28.64 cr. | View
+CP | 13.29 cr. | View
+CI | 9.60 cr. | View
+Rajasthan | 13.88 cr. | View
+Nizam-AP | 30.42 cr. | View
+Mysore | 36.62 cr. | View
+West Bengal | 17.64 cr. | View
+Bihar & Jharkhand | 6.07 cr. | View
+Assam | 4.45 cr. | View
+Orissa | 3.78 cr. | View
+Tamil Nadu & Kerala | 38.00 cr. | View
+<!--next-->
+Cinema | Amount |
+PVR | 87.33 cr. | View
+INOX | 63.26 cr. | View
+Cinepolis | 38.68 cr. | View
+Movie Time | 38.78 cr. | View
+Miraj | 5.06 cr. |
+Rajhans | 4.16 cr. |
+Mukta | 2.45 cr. |
+Gold Digital | 4.20 cr. |
+SVF | 8.05 cr. |
+Fortune | 4.03 cr. |
+Priya | 1.78 cr. |
+City Pride | 1.53 cr. |

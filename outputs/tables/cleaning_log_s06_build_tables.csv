@@ -1,0 +1,3 @@
+step,dataset,problem,rows_affected,action,reason
+s06_build_tables,films,Encore has no Wikidata entry of its own,1,"genres copied from the parent film (same film + extra scenes), parent_film_id = 1",re-release of the same title
+s06_build_tables,daily_collections,Nov-2026 rows have no CPI month row (not published yet),4,collection_month = NULL for those rows (FK allows NULL),keeps referential integrity

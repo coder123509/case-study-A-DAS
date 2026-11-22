@@ -1,0 +1,313 @@
+{
+  "collection": {
+    "method": "Public YouTube watch page (ytInitialPlayerResponse.videoDetails + microformat; like count from the like-button accessibility text). Values copied as shown, still as strings.",
+    "snapshot_taken_at": "2026-11-21T20:05:00+05:30",
+    "note": "Cumulative counters at snapshot time, NOT historical daily values. commentCount not exposed on the watch page without scrolling -> null. src/collect/youtube_api_collector.py fetches the same fields from YouTube Data API v3 with your own key."
+  },
+  "items": [
+    {
+      "id": "hA6hldpSTF8",
+      "snippet": {
+        "title": "Marvel Studios' Avengers - Official Trailer",
+        "channelTitle": "Marvel Entertainment",
+        "channelId": "UCvC4D8onUfXzvjTOM-dBfEA",
+        "publishedAt": "2018-12-07T05:01:21-08:00",
+        "categoryLabel": "Entertainment"
+      },
+      "contentDetails": {
+        "durationSeconds": "145"
+      },
+      "statistics": {
+        "viewCount": "112514610",
+        "likeCount": "3,377,553",
+        "commentCount": null
+      },
+      "availableCountriesCount": 249
+    },
+    {
+      "id": "XwYnB6eBWTc",
+      "snippet": {
+        "title": "Avengers | Official Teaser Trailer | Hindi | In Cinemas April 26",
+        "channelTitle": "IndiaMarvel",
+        "channelId": "UCah9jr4Ehlrt4Wv-q-CgJkg",
+        "publishedAt": "2018-12-07T05:01:16-08:00",
+        "categoryLabel": "Film & Animation"
+      },
+      "contentDetails": {
+        "durationSeconds": "146"
+      },
+      "statistics": {
+        "viewCount": "12397044",
+        "likeCount": "220,389",
+        "commentCount": null
+      },
+      "availableCountriesCount": 1
+    },
+    {
+      "id": "TcMBFSGVi1c",
+      "snippet": {
+        "title": "Marvel Studios' Avengers: Endgame - Official Trailer",
+        "channelTitle": "Marvel Entertainment",
+        "channelId": "UCvC4D8onUfXzvjTOM-dBfEA",
+        "publishedAt": "2019-03-14T05:05:18-07:00",
+        "categoryLabel": "Entertainment"
+      },
+      "contentDetails": {
+        "durationSeconds": "146"
+      },
+      "statistics": {
+        "viewCount": "170028388",
+        "likeCount": "3,533,721",
+        "commentCount": null
+      },
+      "availableCountriesCount": null
+    },
+    {
+      "id": "LPhqL4DqzBg",
+      "snippet": {
+        "title": "Avengers: Endgame  | Official Trailer | Hindi | In Cinemas April 26",
+        "channelTitle": "IndiaMarvel",
+        "channelId": "UCah9jr4Ehlrt4Wv-q-CgJkg",
+        "publishedAt": "2019-03-14T05:04:16-07:00",
+        "categoryLabel": "Film & Animation"
+      },
+      "contentDetails": {
+        "durationSeconds": "149"
+      },
+      "statistics": {
+        "viewCount": "14677220",
+        "likeCount": "431,424",
+        "commentCount": null
+      },
+      "availableCountriesCount": 249
+    },
+    {
+      "id": "KCSNFZKbhZE",
+      "snippet": {
+        "title": "Marvel Studios’ Avengers: Endgame | Special Look",
+        "channelTitle": "Marvel Entertainment",
+        "channelId": "UCvC4D8onUfXzvjTOM-dBfEA",
+        "publishedAt": "2019-04-02T05:00:07-07:00",
+        "categoryLabel": "Entertainment"
+      },
+      "contentDetails": {
+        "durationSeconds": "60"
+      },
+      "statistics": {
+        "viewCount": "32349375",
+        "likeCount": "800,716",
+        "commentCount": null
+      },
+      "availableCountriesCount": 249
+    },
+    {
+      "id": "L2NAh3CIdig",
+      "snippet": {
+        "title": "Avengers Endgame: Encore | Official Trailer | In Theaters Sep 25",
+        "channelTitle": "Marvel Entertainment",
+        "channelId": "UCvC4D8onUfXzvjTOM-dBfEA",
+        "publishedAt": "2026-08-25T09:00:01-07:00",
+        "categoryLabel": "Entertainment"
+      },
+      "contentDetails": {
+        "durationSeconds": "96"
+      },
+      "statistics": {
+        "viewCount": "23747191",
+        "likeCount": "348,793",
+        "commentCount": null
+      },
+      "availableCountriesCount": 249
+    },
+    {
+      "id": "gq01MdYW120",
+      "snippet": {
+        "title": "Avengers Endgame: Encore | Official Hindi Trailer I In Cinemas Sep 25",
+        "channelTitle": "IndiaMarvel",
+        "channelId": "UCah9jr4Ehlrt4Wv-q-CgJkg",
+        "publishedAt": "2026-08-25T10:17:15-07:00",
+        "categoryLabel": "Film & Animation"
+      },
+      "contentDetails": {
+        "durationSeconds": "96"
+      },
+      "statistics": {
+        "viewCount": "6037843",
+        "likeCount": "61,516",
+        "commentCount": null
+      },
+      "availableCountriesCount": 249
+    },
+    {
+      "id": "UiMg566PREA",
+      "snippet": {
+        "title": "Steve Rogers Will Return | Avengers: Doomsday in Theaters December 18, 2026",
+        "channelTitle": "Marvel Entertainment",
+        "channelId": "UCvC4D8onUfXzvjTOM-dBfEA",
+        "publishedAt": "2025-12-23T06:00:07-08:00",
+        "categoryLabel": "Entertainment"
+      },
+      "contentDetails": {
+        "durationSeconds": "81"
+      },
+      "statistics": {
+        "viewCount": "24543869",
+        "likeCount": "980,991",
+        "commentCount": null
+      },
+      "availableCountriesCount": 249
+    },
+    {
+      "id": "1clWprLC5Ak",
+      "snippet": {
+        "title": "Thor Will Return | Avengers: Doomsday in Theaters December 18, 2026",
+        "channelTitle": "Marvel Entertainment",
+        "channelId": "UCvC4D8onUfXzvjTOM-dBfEA",
+        "publishedAt": "2025-12-30T06:00:34-08:00",
+        "categoryLabel": "Entertainment"
+      },
+      "contentDetails": {
+        "durationSeconds": "82"
+      },
+      "statistics": {
+        "viewCount": "26024558",
+        "likeCount": "803,599",
+        "commentCount": null
+      },
+      "availableCountriesCount": 249
+    },
+    {
+      "id": "kH1XlwHQv9o",
+      "snippet": {
+        "title": "The X-Men Will Return | Avengers: Doomsday in Theaters December 18, 2026",
+        "channelTitle": "Marvel Entertainment",
+        "channelId": "UCvC4D8onUfXzvjTOM-dBfEA",
+        "publishedAt": "2026-01-06T06:00:09-08:00",
+        "categoryLabel": "Entertainment"
+      },
+      "contentDetails": {
+        "durationSeconds": "69"
+      },
+      "statistics": {
+        "viewCount": "25200943",
+        "likeCount": "788,787",
+        "commentCount": null
+      },
+      "availableCountriesCount": 249
+    },
+    {
+      "id": "399Ez7WHK5s",
+      "snippet": {
+        "title": "Avengers: Doomsday | Only in Theaters December 18, 2026",
+        "channelTitle": "Marvel Entertainment",
+        "channelId": "UCvC4D8onUfXzvjTOM-dBfEA",
+        "publishedAt": "2026-01-13T06:12:06-08:00",
+        "categoryLabel": "Entertainment"
+      },
+      "contentDetails": {
+        "durationSeconds": "65"
+      },
+      "statistics": {
+        "viewCount": "20958079",
+        "likeCount": "510,669",
+        "commentCount": null
+      },
+      "availableCountriesCount": 249
+    },
+    {
+      "id": "irVNGjRFZGk",
+      "snippet": {
+        "title": "Avengers: Doomsday | Official Trailer | In Theaters December 18",
+        "channelTitle": "Marvel Entertainment",
+        "channelId": "UCvC4D8onUfXzvjTOM-dBfEA",
+        "publishedAt": "2026-07-20T06:00:20-07:00",
+        "categoryLabel": "Entertainment"
+      },
+      "contentDetails": {
+        "durationSeconds": "146"
+      },
+      "statistics": {
+        "viewCount": "89131427",
+        "likeCount": "2,724,582",
+        "commentCount": null
+      },
+      "availableCountriesCount": 249
+    },
+    {
+      "id": "hvKW6iDOZrc",
+      "snippet": {
+        "title": "Avengers: Doomsday | Official Hindi Trailer | In Cinemas December 18",
+        "channelTitle": "IndiaMarvel",
+        "channelId": "UCah9jr4Ehlrt4Wv-q-CgJkg",
+        "publishedAt": "2026-07-20T07:07:29-07:00",
+        "categoryLabel": "Film & Animation"
+      },
+      "contentDetails": {
+        "durationSeconds": "145"
+      },
+      "statistics": {
+        "viewCount": "17957160",
+        "likeCount": "501,913",
+        "commentCount": null
+      },
+      "availableCountriesCount": 249
+    },
+    {
+      "id": "X1aFkAkFASk",
+      "snippet": {
+        "title": "Avengers: Doomsday | Special Look | In Theaters December 18",
+        "channelTitle": "Marvel Entertainment",
+        "channelId": "UCvC4D8onUfXzvjTOM-dBfEA",
+        "publishedAt": "2026-08-14T21:06:21-07:00",
+        "categoryLabel": "Entertainment"
+      },
+      "contentDetails": {
+        "durationSeconds": "130"
+      },
+      "statistics": {
+        "viewCount": "55287017",
+        "likeCount": "1,431,676",
+        "commentCount": null
+      },
+      "availableCountriesCount": 249
+    },
+    {
+      "id": "UfNu7pcR0e8",
+      "snippet": {
+        "title": "Avengers: Doomsday | In Theaters December 18",
+        "channelTitle": "Marvel Entertainment",
+        "channelId": "UCvC4D8onUfXzvjTOM-dBfEA",
+        "publishedAt": "2026-10-24T17:00:00-07:00",
+        "categoryLabel": "Entertainment"
+      },
+      "contentDetails": {
+        "durationSeconds": "30"
+      },
+      "statistics": {
+        "viewCount": "21628124",
+        "likeCount": "307,587",
+        "commentCount": null
+      },
+      "availableCountriesCount": 249
+    },
+    {
+      "id": "Fg0jyss_YnU",
+      "snippet": {
+        "title": "Avengers: Doomsday | The Return | In Theaters December 18",
+        "channelTitle": "Marvel Entertainment",
+        "channelId": "UCvC4D8onUfXzvjTOM-dBfEA",
+        "publishedAt": "2026-11-18T09:00:01-08:00",
+        "categoryLabel": "Entertainment"
+      },
+      "contentDetails": {
+        "durationSeconds": "90"
+      },
+      "statistics": {
+        "viewCount": "7958689",
+        "likeCount": "141,360",
+        "commentCount": null
+      },
+      "availableCountriesCount": 249
+    }
+  ]
+}

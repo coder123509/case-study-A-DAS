@@ -1,0 +1,9 @@
+pandas>=2.0
+numpy
+matplotlib
+lxml            # pandas.read_html
+openpyxl        # spreadsheet step
+scikit-learn    # TF-IDF + logistic regression sentiment model
+vaderSentiment  # rule-based sentiment (course resource)
+requests        # src/collect/ scripts
+pyspark>=3.4    # spark/pyspark_text_job.py (needs Java 8/11/17)

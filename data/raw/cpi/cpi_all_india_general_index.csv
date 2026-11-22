@@ -1,0 +1,26 @@
+series_base,month,sector,index_value,status,source_document,source_url
+2012=100,Apr-2019,Combined,141.2,Final,"MoSPI CPI press release for May 2019 (dated 12 Jun 2019), table 'Monthly changes ... May 2019 over Apr. 2019'",https://mospi.gov.in/uploads/documents/CPI/Press/PR%20May%202019.pdf
+2012=100,May-2019,Combined,142.0,Provisional,"MoSPI CPI press release for May 2019 (dated 12 Jun 2019)",https://mospi.gov.in/uploads/documents/CPI/Press/PR%20May%202019.pdf
+2012=100,Dec-2025,Combined,198.0,Final,"First press release of CPI base 2024 (PIB, 12 Feb 2026), section on Dec 2025 at base 2012",https://static.pib.gov.in/WriteReadData/specificdocs/documents/2026/feb/doc2026212787501.pdf
+2024=100,Jan-2025,Combined,101.67,Final,"MoSPI CPI press release for October 2026 (12 Nov 2026), Annex IV series",https://www.mospi.gov.in/uploads/latestreleasesfiles/1794480048335-Press%20Release%20of%20CPI%20for%20October%202026%20.pdf
+2024=100,Feb-2025,Combined,101.32,Final,same as above,https://www.mospi.gov.in/uploads/latestreleasesfiles/1794480048335-Press%20Release%20of%20CPI%20for%20October%202026%20.pdf
+2024=100,Mar-2025,Combined,101.39,Final,same as above,https://www.mospi.gov.in/uploads/latestreleasesfiles/1794480048335-Press%20Release%20of%20CPI%20for%20October%202026%20.pdf
+2024=100,Apr-2025,Combined,101.58,Final,same as above,https://www.mospi.gov.in/uploads/latestreleasesfiles/1794480048335-Press%20Release%20of%20CPI%20for%20October%202026%20.pdf
+2024=100,May-2025,Combined,101.90,Final,same as above,https://www.mospi.gov.in/uploads/latestreleasesfiles/1794480048335-Press%20Release%20of%20CPI%20for%20October%202026%20.pdf
+2024=100,Jun-2025,Combined,102.51,Final,same as above,https://www.mospi.gov.in/uploads/latestreleasesfiles/1794480048335-Press%20Release%20of%20CPI%20for%20October%202026%20.pdf
+2024=100,Jul-2025,Combined,103.35,Final,same as above,https://www.mospi.gov.in/uploads/latestreleasesfiles/1794480048335-Press%20Release%20of%20CPI%20for%20October%202026%20.pdf
+2024=100,Aug-2025,Combined,103.74,Final,same as above,https://www.mospi.gov.in/uploads/latestreleasesfiles/1794480048335-Press%20Release%20of%20CPI%20for%20October%202026%20.pdf
+2024=100,Sep-2025,Combined,103.74,Final,same as above,https://www.mospi.gov.in/uploads/latestreleasesfiles/1794480048335-Press%20Release%20of%20CPI%20for%20October%202026%20.pdf
+2024=100,Oct-2025,Combined,103.74,Final,same as above,https://www.mospi.gov.in/uploads/latestreleasesfiles/1794480048335-Press%20Release%20of%20CPI%20for%20October%202026%20.pdf
+2024=100,Nov-2025,Combined,104.01,Final,same as above,https://www.mospi.gov.in/uploads/latestreleasesfiles/1794480048335-Press%20Release%20of%20CPI%20for%20October%202026%20.pdf
+2024=100,Dec-2025,Combined,104.10,Final,same as above,https://www.mospi.gov.in/uploads/latestreleasesfiles/1794480048335-Press%20Release%20of%20CPI%20for%20October%202026%20.pdf
+2024=100,Jan-2026,Combined,104.45,Final,same as above,https://www.mospi.gov.in/uploads/latestreleasesfiles/1794480048335-Press%20Release%20of%20CPI%20for%20October%202026%20.pdf
+2024=100,Feb-2026,Combined,104.57,Final,same as above,https://www.mospi.gov.in/uploads/latestreleasesfiles/1794480048335-Press%20Release%20of%20CPI%20for%20October%202026%20.pdf
+2024=100,Mar-2026,Combined,104.84,Final,same as above,https://www.mospi.gov.in/uploads/latestreleasesfiles/1794480048335-Press%20Release%20of%20CPI%20for%20October%202026%20.pdf
+2024=100,Apr-2026,Combined,105.12,Final,same as above,https://www.mospi.gov.in/uploads/latestreleasesfiles/1794480048335-Press%20Release%20of%20CPI%20for%20October%202026%20.pdf
+2024=100,May-2026,Combined,105.91,Final,same as above,https://www.mospi.gov.in/uploads/latestreleasesfiles/1794480048335-Press%20Release%20of%20CPI%20for%20October%202026%20.pdf
+2024=100,Jun-2026,Combined,107.00,Final,same as above,https://www.mospi.gov.in/uploads/latestreleasesfiles/1794480048335-Press%20Release%20of%20CPI%20for%20October%202026%20.pdf
+2024=100,Jul-2026,Combined,107.95,Final,same as above,https://www.mospi.gov.in/uploads/latestreleasesfiles/1794480048335-Press%20Release%20of%20CPI%20for%20October%202026%20.pdf
+2024=100,Aug-2026,Combined,108.74,Final,same as above,https://www.mospi.gov.in/uploads/latestreleasesfiles/1794480048335-Press%20Release%20of%20CPI%20for%20October%202026%20.pdf
+2024=100,Sep-2026,Combined,109.49,Final,same as above,https://www.mospi.gov.in/uploads/latestreleasesfiles/1794480048335-Press%20Release%20of%20CPI%20for%20October%202026%20.pdf
+2024=100,Oct-2026,Combined,110.05,Provisional,same as above,https://www.mospi.gov.in/uploads/latestreleasesfiles/1794480048335-Press%20Release%20of%20CPI%20for%20October%202026%20.pdf

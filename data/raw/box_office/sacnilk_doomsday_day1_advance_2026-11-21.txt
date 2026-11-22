@@ -1,0 +1,52 @@
+# Source: https://www.sacnilk.com/quicknews/Avengers_Doomsday_2026_First_Day_Advance_Booking_Report
+# Accessed: 2026-11-21 ~19:55 IST via browser (page text copied, emoji icons removed, nothing else changed)
+# Page header: "Updated: November 21, 2026 at 7:20 PM IST · Published: November 18, 2026 at 7:20 PM IST"
+# Convention used by Sacnilk: value [value without block seats]
+
+Avengers: Doomsday has sold ₹46.50 Cr in advance bookings across 4 show dates, ₹39.10 Cr without block seats. Day 1 (Thu 17 Dec) leads with ₹20.77 Cr [₹18.40 Cr]; National Capital Region (NCR) is the top city at ₹3.56 Cr [₹3.21 Cr].
+Updated 7:20 PM IST · data as of 6:50 PM IST · based on 2,171 shows at 261 cinemas in 77 cities
+
+## Day 1 (Thu 17 Dec) — at a glance
+DAY 1 GROSS: ₹20.77 Cr [₹18.40 Cr]
+TICKETS BOOKED: 2.97 Lac [2.61 Lac]
+SHOWS: 2,171
+OCCUPANCY: 48% [43%]
+HOUSEFULL SHOWS: 74 · 9 FULLY SOLD
+Premium formats hold 10% of Avengers: Doomsday's Day 1 gross from 10% of the shows: ₹2.04 Cr [₹1.75 Cr] across 208 shows.
+36,048 of the 2.97 Lac tickets booked for Avengers: Doomsday Day 1 are block seats (12%); 2.61 Lac are open-sale bookings.
+
+## Language totals (gross [w/o block] | tickets [w/o block] | shows | ATP)
+language|gross|tickets|shows|atp
+All India|₹20.77 Cr [₹18.40 Cr]|2.97 Lac [2.61 Lac]|2,171|₹699
+English|₹17.37 Cr [₹15.38 Cr]|2.27 Lac [1.98 Lac]|1,637|₹766
+Hindi|₹2.88 Cr [₹2.56 Cr]|47,514 [42,221]|457|₹607
+Tamil|₹37.32 Lac [₹32.94 Lac]|16,616 [14,594]|45|₹225
+Telugu|₹14.04 Lac [₹13.49 Lac]|6,052 [5,765]|32|₹232
+
+## Top states
+state|gross|tickets_booked|occupancy|shows|housefull
+Maharashtra|₹4.90 Cr [₹4.26 Cr]|45,948 [40,706]|43% [38%]|395|1
+Delhi|₹3.56 Cr [₹3.21 Cr]|43,958 [39,776]|45% [41%]|374|0
+Karnataka|₹3.44 Cr [₹3.21 Cr]|29,618 [27,750]|51% [48%]|227|6
+West Bengal|₹1.60 Cr [₹1.48 Cr]|20,387 [18,832]|55% [51%]|130|0
+Gujarat|₹1.27 Cr [₹1.12 Cr]|14,729 [12,996]|39% [34%]|144|0
+Kerala|₹99.40 Lac [₹88.13 Lac]|25,840 [23,271]|72% [65%]|118|17
+Telangana|₹96.99 Lac [₹83.42 Lac]|30,585 [26,536]|62% [54%]|144|18
+Tamil Nadu|₹77.70 Lac [₹53.98 Lac]|30,258 [22,386]|84% [62%]|86|28
+Uttar Pradesh|₹67.72 Lac [₹58.07 Lac]|7,829 [6,687]|28% [24%]|89|0
+Punjab|₹54.67 Lac [₹46.53 Lac]|10,402 [8,778]|31% [26%]|126|1
+Others (13 states)|₹2.04 Cr [₹1.82 Cr]|37,374 [33,162]||338|
+
+## Top cities
+city|gross|tickets_booked|occupancy|shows|housefull
+National Capital Region (NCR)|₹3.56 Cr [₹3.21 Cr]|43,958 [39,776]|45% [41%]|374|0
+Mumbai|₹3.53 Cr [₹3.02 Cr]|29,948 [26,256]|47% [42%]|236|1
+Bengaluru|₹3.24 Cr [₹3.04 Cr]|25,990 [24,576]|70% [66%]|165|6
+Kolkata|₹1.48 Cr [₹1.39 Cr]|17,210 [16,132]|59% [55%]|106|0
+Pune|₹1.13 Cr [₹1.02 Cr]|12,595 [11,371]|40% [36%]|124|0
+Hyderabad|₹96.13 Lac [₹83.00 Lac]|30,332 [26,418]|64% [56%]|139|18
+Ahmedabad|₹85.96 Lac [₹77.13 Lac]|7,413 [6,783]|49% [45%]|65|0
+Kochi|₹60.61 Lac [₹51.76 Lac]|11,325 [9,611]|96% [81%]|40|14
+Lucknow|₹53.43 Lac [₹46.06 Lac]|5,301 [4,498]|34% [29%]|58|0
+Chandigarh|₹34.88 Lac [₹29.86 Lac]|6,145 [5,184]|38% [32%]|66|1
+Others (67 cities)|₹4.51 Cr [₹3.85 Cr]|1.07 Lac [90,275]||798|

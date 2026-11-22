@@ -1,0 +1,10 @@
+step,dataset,problem,rows_affected,action,reason
+s01_flatten_json,wikimedia_pageviews,Endgame article did not exist under this title before 2018-12-07 (views = 1-2/day),6,"kept, flagged pre_title_reveal=True, excluded from the trailer window",the 'Avengers: Endgame' title was revealed with the first trailer; earlier traffic went to another page name
+s01_flatten_json,wikimedia_pageviews,AVG_DOOMSDAY_2026: missing calendar days in daily series,0,none to fix,the API returns one row per day; we verify instead of assuming
+s01_flatten_json,wikimedia_pageviews,AVG_ENDGAME_2019: missing calendar days in daily series,0,none to fix,the API returns one row per day; we verify instead of assuming
+s01_flatten_json,wikidata,filmLabel came back as a QID (no English label on Wikidata),1,title filled from our film key table via the QID,film-name matching: QID is a reliable key
+s01_flatten_json,wikidata,runtime missing for Doomsday (unreleased film),1,kept as NULL,runtime is not public yet; filling it would be invention
+s01_flatten_json,wikidata,no India-specific release date for Doomsday on Wikidata,1,"use 17-Dec-2026 from ThePrint/Sacnilk in the films table, keep Wikidata value NULL",Wikidata only lists the US date (18 Dec); India opens a day earlier
+s01_flatten_json,youtube,view/like counts stored as text with thousands separators,16,"stripped commas, cast to Int64",needed for arithmetic and normalisation
+s01_flatten_json,youtube,commentCount not available from the watch page,16,kept as NULL (re-run src/collect/youtube_api_collector.py with an API key to fill it),a missing count is not zero
+s01_flatten_json,youtube,Dec-2018 Endgame trailers are titled 'Avengers - Official Trailer' (no 'Endgame'),2,matched by rule using the publish year,the title 'Endgame' was revealed inside that trailer

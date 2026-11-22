@@ -1,0 +1,2 @@
+step,dataset,problem,rows_affected,action,reason
+s05_sentiment,themes,theme keywords are our own dictionary (no labelled theme data),145,"regex dictionary, kept in this file so anyone can audit / change it",transparent > clever for a 145-review sample

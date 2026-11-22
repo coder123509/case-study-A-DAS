@@ -1,0 +1,17 @@
+metric,value,unit
+Endgame trailer window 14d wiki views,850592.0,
+Doomsday trailer window 14d wiki views,1032522.0,
+Endgame day3 as % of day0,49.5,%
+Doomsday day3 as % of day0,32.8,%
+Endgame days until attention < 50% of launch day,3.0,days
+Doomsday days until attention < 50% of launch day,3.0,days
+"corr(daily net, same-day wiki views) Endgame days 1-28",0.972,
+"corr(log net, log views) Endgame days 1-28",0.965,
+"corr(daily net, previous-day views)",0.935,
+"corr(daily net, same-day views) days 8-28 only",0.894,
+n days in correlation,28.0,days
+CPI factor Apr-2019 -> Oct-2026,1.4798,
+Endgame Monday (day 4) as % of Friday,57.9,%
+Encore Monday (day 4) as % of Friday,31.3,%
+Endgame 2nd Friday as % of 1st Friday,22.4,%
+Encore 2nd Friday as % of 1st Friday,16.8,%

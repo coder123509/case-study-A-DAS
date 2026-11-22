@@ -1,0 +1,4 @@
+scenario,day1_net_cr,assumption
+Low: same nominal rupees as Endgame (= about 32% less in real terms),53.6,"2019 rupees, no inflation"
+Mid: same real money as Endgame (CPI-adjusted),79.3,Endgame Day-1 x CPI factor 1.480
+High: Endgame's advance-to-Day-1 multiple applied to Doomsday's national-chain advance,94.0,"Endgame Day-1 net / its final national-chain advance = 6.48; Doomsday NC advance ₹14.5 Cr (19-Nov, 28 days out). Upper reference only: 2026 audiences book far more in advance than in 2019, so the multiple is probably smaller."

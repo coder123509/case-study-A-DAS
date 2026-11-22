@@ -1,0 +1,4 @@
+film_id,film_key,title,release_date_india,release_type,parent_film_id,genres,runtime_min,original_language,imdb_id,wikidata_id,tmdb_id
+1,AVG_ENDGAME_2019,Avengers: Endgame,2019-04-26,original,,action film|adventure film|superhero film,181,English,tt4154796,Q23781155,299534
+2,AVG_ENCORE_2026,Avengers Endgame: Encore,2026-09-25,re-release,1,action film|adventure film|superhero film,,English,,,
+3,AVG_DOOMSDAY_2026,Avengers: Doomsday,2026-12-17,original,,action film|adventure film|superhero film|science fiction film,,English,tt21357150,Q113244839,1003596

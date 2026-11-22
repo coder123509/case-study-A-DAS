@@ -1,0 +1,77 @@
+{
+  "head" : {
+    "vars" : [ "film", "filmLabel", "imdb", "tmdb", "duration", "boxOfficeUSD", "genres", "languages", "publicationDates" ]
+  },
+  "results" : {
+    "bindings" : [ {
+      "film" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q23781155"
+      },
+      "filmLabel" : {
+        "xml:lang" : "en",
+        "type" : "literal",
+        "value" : "Avengers: Endgame"
+      },
+      "imdb" : {
+        "type" : "literal",
+        "value" : "tt4154796"
+      },
+      "tmdb" : {
+        "type" : "literal",
+        "value" : "299534"
+      },
+      "duration" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#decimal",
+        "type" : "literal",
+        "value" : "181"
+      },
+      "boxOfficeUSD" : {
+        "datatype" : "http://www.w3.org/2001/XMLSchema#decimal",
+        "type" : "literal",
+        "value" : "2797501328"
+      },
+      "genres" : {
+        "type" : "literal",
+        "value" : "action film|adventure film|superhero film"
+      },
+      "languages" : {
+        "type" : "literal",
+        "value" : "English"
+      },
+      "publicationDates" : {
+        "type" : "literal",
+        "value" : "2019-04-26T00:00:00Z@United States|2019-04-26T00:00:00Z@India"
+      }
+    }, {
+      "film" : {
+        "type" : "uri",
+        "value" : "http://www.wikidata.org/entity/Q113244839"
+      },
+      "filmLabel" : {
+        "type" : "literal",
+        "value" : "Q113244839"
+      },
+      "imdb" : {
+        "type" : "literal",
+        "value" : "tt21357150"
+      },
+      "tmdb" : {
+        "type" : "literal",
+        "value" : "1003596"
+      },
+      "genres" : {
+        "type" : "literal",
+        "value" : "action film|adventure film|superhero film|science fiction film"
+      },
+      "languages" : {
+        "type" : "literal",
+        "value" : "English"
+      },
+      "publicationDates" : {
+        "type" : "literal",
+        "value" : "2026-12-18T00:00:00Z@United States"
+      }
+    } ]
+  }
+}

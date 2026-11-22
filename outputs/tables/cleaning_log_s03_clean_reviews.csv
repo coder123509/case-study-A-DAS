@@ -1,0 +1,12 @@
+step,dataset,problem,rows_affected,action,reason
+s03_clean_reviews,rt_reviews,relative dates like '6 days ago',7,converted using the access date 2026-11-21,text dates -> datetime; error of +-1 day accepted
+s03_clean_reviews,imdb_reviews,IMDb hides all but 5 featured reviews unless you log in,9713,used only the 5 public ones; did not log in,assignment rule: never scrape behind a login
+s03_clean_reviews,youtube_comments,no comment files yet (needs a YouTube Data API key),0,pipeline runs without them; collector script ready in src/collect/,we only use official API for comments
+s03_clean_reviews,all_reviews,HTML entities and <br/> tags in text (&#39; &quot;),5,html.unescape + strip tags,otherwise word counts and sentiment see junk tokens
+s03_clean_reviews,all_reviews,empty text,0,dropped,nothing to analyse
+s03_clean_reviews,all_reviews,duplicate review ids,0,dropped,same record collected twice
+s03_clean_reviews,all_reviews,identical long texts (copy-paste / bot check),0,kept but flagged is_text_duplicate,short ones like 'masterpiece' repeat naturally; long identical texts would be suspicious
+s03_clean_reviews,all_reviews,"reviews under 3 words ('Masterpiece', 'Peak cinema')",5,"kept, flagged is_short",they still carry a star rating; text models may ignore them
+s03_clean_reviews,all_reviews,non-English reviews (Spanish),2,"kept, flagged lang='es', excluded from English sentiment",VADER / our IMDb-trained model are English-only
+s03_clean_reviews,all_reviews,no sentiment label on our own reviews,145,"derived rating_label from stars (>=7/10 positive, <=4 negative, else mixed)","lets us check the IMDb-50K model on OUR data, not only on its own test split"
+s03_clean_reviews,all_reviews,RT page is shared by the 2019 release and the Sep-2026 Encore re-release,140,viewing_context='encore_rerelease_2026' for reviews dated after 25-Sep-2026,"same film key, different moment in time"

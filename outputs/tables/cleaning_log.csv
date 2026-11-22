@@ -1,0 +1,46 @@
+id,step,dataset,problem,rows_affected,action,reason
+1,s01_flatten_json,wikimedia_pageviews,Endgame article did not exist under this title before 2018-12-07 (views = 1-2/day),6,"kept, flagged pre_title_reveal=True, excluded from the trailer window",the 'Avengers: Endgame' title was revealed with the first trailer; earlier traffic went to another page name
+2,s01_flatten_json,wikimedia_pageviews,AVG_DOOMSDAY_2026: missing calendar days in daily series,0,none to fix,the API returns one row per day; we verify instead of assuming
+3,s01_flatten_json,wikimedia_pageviews,AVG_ENDGAME_2019: missing calendar days in daily series,0,none to fix,the API returns one row per day; we verify instead of assuming
+4,s01_flatten_json,wikidata,filmLabel came back as a QID (no English label on Wikidata),1,title filled from our film key table via the QID,film-name matching: QID is a reliable key
+5,s01_flatten_json,wikidata,runtime missing for Doomsday (unreleased film),1,kept as NULL,runtime is not public yet; filling it would be invention
+6,s01_flatten_json,wikidata,no India-specific release date for Doomsday on Wikidata,1,"use 17-Dec-2026 from ThePrint/Sacnilk in the films table, keep Wikidata value NULL",Wikidata only lists the US date (18 Dec); India opens a day earlier
+7,s01_flatten_json,youtube,view/like counts stored as text with thousands separators,16,"stripped commas, cast to Int64",needed for arithmetic and normalisation
+8,s01_flatten_json,youtube,commentCount not available from the watch page,16,kept as NULL (re-run src/collect/youtube_api_collector.py with an API key to fill it),a missing count is not zero
+9,s01_flatten_json,youtube,Dec-2018 Endgame trailers are titled 'Avengers - Official Trailer' (no 'Endgame'),2,matched by rule using the publish year,the title 'Endgame' was revealed inside that trailer
+10,s02_clean_box_office,sacnilk_daywise,table mixes day rows with 'Week N Collection' and 'Total' rows,6,moved to a separate weekly table,summing day + week rows would double count
+11,s02_clean_box_office,sacnilk_daywise,currency strings like '₹ 53.60 Cr [En: ...]',21,parsed to float crore + 4 language columns,type casting text -> numeric
+12,s02_clean_box_office,sacnilk_daywise,days 15-21 marked '** Approx' by the source,7,"kept, flagged is_approx=True",approximate is still the best public figure; flag lets us exclude in robustness checks
+13,s02_clean_box_office,sacnilk_daywise,language split does not add up to the day total,0,kept day total as the official figure,rounding by the source
+14,s02_clean_box_office,bh_daywise,days 29-56 only given as 7-day ranges ('Day 29 - Day 35'),4,"kept in weekly table only, NOT spread over days",splitting a week evenly would invent a daily pattern
+15,s02_clean_box_office,bh_daywise,dates as text '26-Apr-2019 (Fri)',69,parsed with format %d-%b-%Y,text dates -> datetime
+16,s02_clean_box_office,bh_daywise,Encore late days below ₹0.01 Cr (e.g. '₹0.004 cr.'),9,kept as is (not rounded to 0),small but real; rounding would create fake zero days
+17,s02_clean_box_office,daily_collections,Sacnilk and Bollywood Hungama disagree on some days (e.g. Day 8: 12.00 vs 12.50),9,keep both columns; primary = Sacnilk where present,"Sacnilk gives the language split; disagreement documented, not hidden"
+18,s02_clean_box_office,daily_collections,days 22-28 missing in Sacnilk (only a Week-4 total),7,"filled from Bollywood Hungama, source column says so",second trade source for the same day is better than a gap
+19,s02_clean_box_office,daily_collections,Day 1 reported as 53.10 Cr (BH summary / first Sacnilk estimate) vs 53.60 Cr (both day tables),1,use 53.60,"day tables are the later, revised figures"
+20,s02_clean_box_office,daily_collections,only NET is given per day; we need GROSS to compare with Doomsday advance (gross),69,gross_cr_est = net x 1.2025 (Sacnilk India gross 445.00 / net 370.05),"single published ratio; estimate, clearly labelled _est"
+21,s02_clean_box_office,daily_collections,Sacnilk page shows two different net totals: 370.05 (summary) and 373.05 (table total),1,"report lifetime as a range (Sacnilk 370.05 / 373.05, BH 373.22), never as one exact number","source inconsistency, documented"
+22,s02_clean_box_office,weekly_collections,BH week 3: days add up to 21.07 but BH weekly table says 21.72,7,"kept both; lifetime total taken from published totals, shown as a range",internal inconsistency inside one source
+23,s02_clean_box_office,weekly_collections,BH week 4: days add up to 8.69 but BH weekly table says 7.59,7,"kept both; lifetime total taken from published totals, shown as a range",internal inconsistency inside one source
+24,s02_clean_box_office,weekly_collections,Sacnilk stops at week 5; BH runs to week 8,3,kept NULL for Sacnilk weeks 6-8,missing in source
+25,s02_clean_box_office,advance_booking,'Lac' and '[without block seats]' mixed into numbers ('2.97 Lac [2.61 Lac]'),27,two numeric columns: with and without block seats; Lac x 1e5,type casting + keep both definitions
+26,s02_clean_box_office,advance_booking,'Others (13 states)' / 'Others (67 cities)' buckets,2,"kept, flagged is_others_bucket","needed for totals, but not a real place for ranking"
+27,s02_clean_box_office,advance_booking,occupancy missing for 'Others' rows and for language rows,7,kept NULL,not published
+28,s03_clean_reviews,rt_reviews,relative dates like '6 days ago',7,converted using the access date 2026-11-21,text dates -> datetime; error of +-1 day accepted
+29,s03_clean_reviews,imdb_reviews,IMDb hides all but 5 featured reviews unless you log in,9713,used only the 5 public ones; did not log in,assignment rule: never scrape behind a login
+30,s03_clean_reviews,youtube_comments,no comment files yet (needs a YouTube Data API key),0,pipeline runs without them; collector script ready in src/collect/,we only use official API for comments
+31,s03_clean_reviews,all_reviews,HTML entities and <br/> tags in text (&#39; &quot;),5,html.unescape + strip tags,otherwise word counts and sentiment see junk tokens
+32,s03_clean_reviews,all_reviews,empty text,0,dropped,nothing to analyse
+33,s03_clean_reviews,all_reviews,duplicate review ids,0,dropped,same record collected twice
+34,s03_clean_reviews,all_reviews,identical long texts (copy-paste / bot check),0,kept but flagged is_text_duplicate,short ones like 'masterpiece' repeat naturally; long identical texts would be suspicious
+35,s03_clean_reviews,all_reviews,"reviews under 3 words ('Masterpiece', 'Peak cinema')",5,"kept, flagged is_short",they still carry a star rating; text models may ignore them
+36,s03_clean_reviews,all_reviews,non-English reviews (Spanish),2,"kept, flagged lang='es', excluded from English sentiment",VADER / our IMDb-trained model are English-only
+37,s03_clean_reviews,all_reviews,no sentiment label on our own reviews,145,"derived rating_label from stars (>=7/10 positive, <=4 negative, else mixed)","lets us check the IMDb-50K model on OUR data, not only on its own test split"
+38,s03_clean_reviews,all_reviews,RT page is shared by the 2019 release and the Sep-2026 Encore re-release,140,viewing_context='encore_rerelease_2026' for reviews dated after 25-Sep-2026,"same film key, different moment in time"
+39,s04_inflation,cpi,CPI base changed from 2012=100 to 2024=100 in Feb 2026,2,old-base months multiplied by MoSPI linking factor 0.5267 (Combined),official linking method; never mix raw 2012-base and 2024-base numbers
+40,s04_inflation,cpi,overlap check Dec-2025: linked old = 104.29 vs published new = 104.1,1,"no change, reported",gap +0.19 points shows the link is approximate (factor is an annual average)
+41,s04_inflation,daily_collections,CPI for Nov-2026 not published yet (release 14-Dec-2026),4,used Oct-2026 CPI (latest available),"one-month gap, effect < 1%"
+42,s04_inflation,ticket_prices,no like-for-like ATP for Endgame 2019 in public sources,1,"compare PVR normal ATP 2019 (₹215) with Doomsday advance ATP (₹699), flagged as indicative",CPI is not a cinema price index; we keep the two comparisons separate
+43,s05_sentiment,themes,theme keywords are our own dictionary (no labelled theme data),145,"regex dictionary, kept in this file so anyone can audit / change it",transparent > clever for a 145-review sample
+44,s06_build_tables,films,Encore has no Wikidata entry of its own,1,"genres copied from the parent film (same film + extra scenes), parent_film_id = 1",re-release of the same title
+45,s06_build_tables,daily_collections,Nov-2026 rows have no CPI month row (not published yet),4,collection_month = NULL for those rows (FK allows NULL),keeps referential integrity

@@ -1,0 +1,3 @@
+film,filmLabel,imdb,tmdb,duration,boxOfficeUSD,genres,languages,publicationDates,film_key,runtime_min,release_date_india_wikidata
+http://www.wikidata.org/entity/Q23781155,Avengers: Endgame,tt4154796,299534,181,2797501328,action film|adventure film|superhero film,English,2019-04-26T00:00:00Z@United States|2019-04-26T00:00:00Z@India,AVG_ENDGAME_2019,181.0,2019-04-26
+http://www.wikidata.org/entity/Q113244839,Q113244839,tt21357150,1003596,,,action film|adventure film|superhero film|science fiction film,English,2026-12-18T00:00:00Z@United States,AVG_DOOMSDAY_2026,,

@@ -1,0 +1,3 @@
+series_base,month,sector,classification,item,index_value,yoy_inflation_pct,source_url,why_not_linked
+2012=100,Apr-2019,Combined,"Sub-group 6.1.04 (old 2012 classification)",Recreation and amusement,138.6,,https://mospi.gov.in/uploads/documents/CPI/Press/PR%20May%202019.pdf,"Different classification (old sub-group vs new COICOP 2018 division); MoSPI publishes linking factors only for the general index, so we do not chain these two"
+2024=100,Oct-2026,Combined,"Division (COICOP 2018)","Recreation, sport and culture",105.93,2.52,https://www.mospi.gov.in/uploads/latestreleasesfiles/1794480048335-Press%20Release%20of%20CPI%20for%20October%202026%20.pdf,see above

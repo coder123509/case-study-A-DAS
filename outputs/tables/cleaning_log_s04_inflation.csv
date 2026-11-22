@@ -1,0 +1,5 @@
+step,dataset,problem,rows_affected,action,reason
+s04_inflation,cpi,CPI base changed from 2012=100 to 2024=100 in Feb 2026,2,old-base months multiplied by MoSPI linking factor 0.5267 (Combined),official linking method; never mix raw 2012-base and 2024-base numbers
+s04_inflation,cpi,overlap check Dec-2025: linked old = 104.29 vs published new = 104.1,1,"no change, reported",gap +0.19 points shows the link is approximate (factor is an annual average)
+s04_inflation,daily_collections,CPI for Nov-2026 not published yet (release 14-Dec-2026),4,used Oct-2026 CPI (latest available),"one-month gap, effect < 1%"
+s04_inflation,ticket_prices,no like-for-like ATP for Endgame 2019 in public sources,1,"compare PVR normal ATP 2019 (₹215) with Doomsday advance ATP (₹699), flagged as indicative",CPI is not a cinema price index; we keep the two comparisons separate

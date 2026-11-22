@@ -1,0 +1,15 @@
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.venv/
+venv/
+.env
+# 63 MB practice corpus - not ours to redistribute, download steps in README
+data/raw/imdb_50k_corpus/*.csv
+# Spark scratch
+spark-warehouse/
+metastore_db/
+derby.log
+# Office lock files
+~$*.xlsx
+.~lock*

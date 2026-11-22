@@ -1,0 +1,8 @@
+metric,nominal_cr,cpi_factor,real_cr_Oct-2026,note
+Endgame opening day (Fri 26-Apr-2019) net,53.6,1.4798,79.32,Sacnilk/BH day table
+Endgame opening weekend (3 days) net,158.65,1.4798,234.76,
+Endgame week 1 net,260.40000000000003,1.4798,385.33,
+Endgame lifetime net - low (Sacnilk summary),370.05,1.4798,547.59,"sources disagree, so we show a range"
+Endgame lifetime net - high (BH total),373.22,1.4798,552.28,
+Endgame India gross (Sacnilk),445.0,1.4798,658.49,
+Encore re-release lifetime net (Sep-Nov 2026),31.238,1.0,31.24,already ~2026 prices (factor ~1.00-1.01)
