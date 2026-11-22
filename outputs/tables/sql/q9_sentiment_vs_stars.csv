@@ -1,0 +1,11 @@
+theme,n,n_compared,agree_pct,avg_rating,avg_model_pos_prob
+price_value,15,10,100.0,5.87,0.517
+extra_scenes_encore,39,29,96.6,8.03,0.619
+action_vfx,15,12,75.0,8.27,0.674
+format_experience,24,18,88.9,8.83,0.673
+story_plot,19,17,94.1,8.84,0.758
+length_pacing,15,12,91.7,9.0,0.732
+doomsday_hype,23,18,100.0,9.13,0.717
+characters_acting,18,12,91.7,9.33,0.687
+emotion,20,15,93.3,9.4,0.732
+ALL_ENGLISH,143,105,90.5,8.66,0.659

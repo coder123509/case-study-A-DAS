@@ -32,7 +32,8 @@ ORDER BY f.title, d.collection_date;
 SELECT d.week_no,
        COUNT(*)                                        AS days_compared,
        SUM(CASE WHEN d.net_cr_sacnilk <> d.net_cr_bh THEN 1 ELSE 0 END) AS days_disagree,
-       ROUND(SUM(d.net_cr_sacnilk - d.net_cr_bh), 2)   AS total_gap_cr
+       ROUND(SUM(d.net_cr_sacnilk - d.net_cr_bh), 2)   AS signed_gap_cr,
+       ROUND(SUM(ABS(d.net_cr_sacnilk - d.net_cr_bh)), 2) AS absolute_gap_cr
 FROM daily_collections d
 WHERE d.net_cr_sacnilk IS NOT NULL AND d.net_cr_bh IS NOT NULL
 GROUP BY d.week_no
@@ -67,11 +68,16 @@ GROUP BY f.title, y.language
 ORDER BY total_views DESC;
 
 -- Q6 (GROUP BY) What do reviewers talk about, and how do those reviews rate?
-SELECT 'price_value'      AS theme, SUM(theme_price_value) AS n, ROUND(AVG(CASE WHEN theme_price_value=1 THEN rating_10 END),2) AS avg_rating FROM reviews
-UNION ALL SELECT 'extra_scenes_encore', SUM(theme_extra_scenes_encore), ROUND(AVG(CASE WHEN theme_extra_scenes_encore=1 THEN rating_10 END),2) FROM reviews
-UNION ALL SELECT 'emotion',            SUM(theme_emotion),             ROUND(AVG(CASE WHEN theme_emotion=1 THEN rating_10 END),2) FROM reviews
-UNION ALL SELECT 'length_pacing',      SUM(theme_length_pacing),       ROUND(AVG(CASE WHEN theme_length_pacing=1 THEN rating_10 END),2) FROM reviews
-UNION ALL SELECT 'doomsday_hype',      SUM(theme_doomsday_hype),       ROUND(AVG(CASE WHEN theme_doomsday_hype=1 THEN rating_10 END),2) FROM reviews
+-- Same nine themes as chart c6. A review can match more than one theme.
+SELECT 'extra_scenes_encore' AS theme, SUM(theme_extra_scenes_encore) AS n, ROUND(AVG(CASE WHEN theme_extra_scenes_encore=1 THEN rating_10 END),2) AS avg_rating FROM reviews
+UNION ALL SELECT 'format_experience',   SUM(theme_format_experience),   ROUND(AVG(CASE WHEN theme_format_experience=1 THEN rating_10 END),2) FROM reviews
+UNION ALL SELECT 'doomsday_hype',       SUM(theme_doomsday_hype),       ROUND(AVG(CASE WHEN theme_doomsday_hype=1 THEN rating_10 END),2) FROM reviews
+UNION ALL SELECT 'emotion',             SUM(theme_emotion),             ROUND(AVG(CASE WHEN theme_emotion=1 THEN rating_10 END),2) FROM reviews
+UNION ALL SELECT 'story_plot',          SUM(theme_story_plot),          ROUND(AVG(CASE WHEN theme_story_plot=1 THEN rating_10 END),2) FROM reviews
+UNION ALL SELECT 'characters_acting',   SUM(theme_characters_acting),   ROUND(AVG(CASE WHEN theme_characters_acting=1 THEN rating_10 END),2) FROM reviews
+UNION ALL SELECT 'length_pacing',       SUM(theme_length_pacing),       ROUND(AVG(CASE WHEN theme_length_pacing=1 THEN rating_10 END),2) FROM reviews
+UNION ALL SELECT 'action_vfx',          SUM(theme_action_vfx),          ROUND(AVG(CASE WHEN theme_action_vfx=1 THEN rating_10 END),2) FROM reviews
+UNION ALL SELECT 'price_value',         SUM(theme_price_value),         ROUND(AVG(CASE WHEN theme_price_value=1 THEN rating_10 END),2) FROM reviews
 ORDER BY n DESC;
 
 -- Q7 (subquery) Doomsday advance: states whose gross per show beats the all-India average
@@ -90,3 +96,58 @@ JOIN cpi_monthly c ON c.month = d.collection_month
 JOIN films f       ON f.film_id = d.film_id
 GROUP BY f.title, c.month, c.series_used, c.cpi_linked_2024
 ORDER BY c.month;
+
+-- Q9 (sentiment vs stars) Does the TF-IDF model agree with the star label, by theme?
+-- Cut-offs are the ones in src/s05: probability >= 0.6 positive, <= 0.4 negative, otherwise mixed.
+-- Agreement drops mixed stars and mixed model scores, same rule as outputs/tables/sentiment_model_eval.csv.
+WITH scored AS (
+    SELECT rating_10, rating_label, model_pos_prob,
+           CASE WHEN model_pos_prob >= 0.6 THEN 'positive'
+                WHEN model_pos_prob <= 0.4 THEN 'negative'
+                ELSE 'mixed' END AS model_label,
+           theme_story_plot, theme_length_pacing, theme_emotion, theme_action_vfx,
+           theme_characters_acting, theme_extra_scenes_encore, theme_price_value,
+           theme_format_experience, theme_doomsday_hype
+    FROM reviews
+    WHERE lang = 'en' AND model_pos_prob IS NOT NULL
+),
+long AS (
+    SELECT 'story_plot' AS theme, theme_story_plot AS hit, rating_10, rating_label, model_label, model_pos_prob FROM scored
+    UNION ALL SELECT 'length_pacing', theme_length_pacing, rating_10, rating_label, model_label, model_pos_prob FROM scored
+    UNION ALL SELECT 'emotion', theme_emotion, rating_10, rating_label, model_label, model_pos_prob FROM scored
+    UNION ALL SELECT 'action_vfx', theme_action_vfx, rating_10, rating_label, model_label, model_pos_prob FROM scored
+    UNION ALL SELECT 'characters_acting', theme_characters_acting, rating_10, rating_label, model_label, model_pos_prob FROM scored
+    UNION ALL SELECT 'extra_scenes_encore', theme_extra_scenes_encore, rating_10, rating_label, model_label, model_pos_prob FROM scored
+    UNION ALL SELECT 'price_value', theme_price_value, rating_10, rating_label, model_label, model_pos_prob FROM scored
+    UNION ALL SELECT 'format_experience', theme_format_experience, rating_10, rating_label, model_label, model_pos_prob FROM scored
+    UNION ALL SELECT 'doomsday_hype', theme_doomsday_hype, rating_10, rating_label, model_label, model_pos_prob FROM scored
+),
+by_theme AS (
+    SELECT theme,
+           SUM(hit) AS n,
+           SUM(CASE WHEN hit = 1 AND rating_label IN ('positive','negative') AND model_label IN ('positive','negative') THEN 1 ELSE 0 END) AS n_compared,
+           SUM(CASE WHEN hit = 1 AND rating_label IN ('positive','negative') AND model_label = rating_label THEN 1 ELSE 0 END) AS n_agree,
+           AVG(CASE WHEN hit = 1 THEN rating_10 END) AS avg_rating,
+           AVG(CASE WHEN hit = 1 THEN model_pos_prob END) AS avg_model_pos_prob
+    FROM long
+    GROUP BY theme
+),
+overall AS (
+    SELECT 'ALL_ENGLISH' AS theme,
+           COUNT(*) AS n,
+           SUM(CASE WHEN rating_label IN ('positive','negative') AND model_label IN ('positive','negative') THEN 1 ELSE 0 END) AS n_compared,
+           SUM(CASE WHEN rating_label IN ('positive','negative') AND model_label = rating_label THEN 1 ELSE 0 END) AS n_agree,
+           AVG(rating_10) AS avg_rating,
+           AVG(model_pos_prob) AS avg_model_pos_prob
+    FROM scored
+)
+SELECT theme, n, n_compared,
+       ROUND(100.0 * n_agree / NULLIF(n_compared, 0), 1) AS agree_pct,
+       ROUND(avg_rating, 2) AS avg_rating,
+       ROUND(avg_model_pos_prob, 3) AS avg_model_pos_prob
+FROM (
+    SELECT * FROM by_theme
+    UNION ALL
+    SELECT * FROM overall
+) u
+ORDER BY CASE WHEN theme = 'ALL_ENGLISH' THEN 1 ELSE 0 END, avg_rating;

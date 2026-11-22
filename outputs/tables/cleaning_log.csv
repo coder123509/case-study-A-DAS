@@ -41,6 +41,7 @@ id,step,dataset,problem,rows_affected,action,reason
 40,s04_inflation,cpi,overlap check Dec-2025: linked old = 104.29 vs published new = 104.1,1,"no change, reported",gap +0.19 points shows the link is approximate (factor is an annual average)
 41,s04_inflation,daily_collections,CPI for Nov-2026 not published yet (release 14-Dec-2026),4,used Oct-2026 CPI (latest available),"one-month gap, effect < 1%"
 42,s04_inflation,ticket_prices,no like-for-like ATP for Endgame 2019 in public sources,1,"compare PVR normal ATP 2019 (₹215) with Doomsday advance ATP (₹699), flagged as indicative",CPI is not a cinema price index; we keep the two comparisons separate
-43,s05_sentiment,themes,theme keywords are our own dictionary (no labelled theme data),145,"regex dictionary, kept in this file so anyone can audit / change it",transparent > clever for a 145-review sample
-44,s06_build_tables,films,Encore has no Wikidata entry of its own,1,"genres copied from the parent film (same film + extra scenes), parent_film_id = 1",re-release of the same title
-45,s06_build_tables,daily_collections,Nov-2026 rows have no CPI month row (not published yet),4,collection_month = NULL for those rows (FK allows NULL),keeps referential integrity
+43,s05_sentiment,imdb_50k,duplicate reviews in the 50K corpus,418,dropped,duplicates would leak between train and test
+44,s05_sentiment,themes,theme keywords are our own dictionary (no labelled theme data),145,"regex dictionary, kept in this file so anyone can audit / change it",transparent > clever for a 145-review sample
+45,s06_build_tables,films,Encore has no Wikidata entry of its own,1,"genres copied from the parent film (same film + extra scenes), parent_film_id = 1",re-release of the same title
+46,s06_build_tables,daily_collections,Nov-2026 rows have no CPI month row (not published yet),4,collection_month = NULL for those rows (FK allows NULL),keeps referential integrity

@@ -6,6 +6,8 @@ venv/
 .env
 # 63 MB practice corpus - not ours to redistribute, download steps in README
 data/raw/imdb_50k_corpus/*.csv
+# Matplotlib cache created by sql/check_queries_sqlite.py
+outputs/.mplconfig/
 # Spark scratch
 spark-warehouse/
 metastore_db/

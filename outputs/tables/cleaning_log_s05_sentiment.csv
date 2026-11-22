@@ -1,2 +1,3 @@
 step,dataset,problem,rows_affected,action,reason
+s05_sentiment,imdb_50k,duplicate reviews in the 50K corpus,418,dropped,duplicates would leak between train and test
 s05_sentiment,themes,theme keywords are our own dictionary (no labelled theme data),145,"regex dictionary, kept in this file so anyone can audit / change it",transparent > clever for a 145-review sample

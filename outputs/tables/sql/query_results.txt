@@ -1,0 +1,122 @@
+=== -- Q1 (JOIN + GROUP BY) Weekly India net per film, nominal vs inflation-adjusted (Oct-2026 ₹)
+                   title  week_no  days_in_week  net_cr_nominal  net_cr_oct2026_prices
+Avengers Endgame: Encore        1             7           26.66                  26.79
+Avengers Endgame: Encore        2             7            3.36                   3.36
+Avengers Endgame: Encore        3             7            0.98                   0.98
+Avengers Endgame: Encore        4             7            0.15                   0.15
+Avengers Endgame: Encore        5             7            0.04                   0.04
+Avengers Endgame: Encore        6             6            0.05                   0.05
+       Avengers: Endgame        1             7          260.40                 384.97
+       Avengers: Endgame        2             7           77.95                 114.70
+       Avengers: Endgame        3             7           22.70                  33.40
+       Avengers: Endgame        4             7            8.69                  12.79
+(10 rows)
+stored: outputs/tables/sql/q1_weekly_net.csv
+
+=== -- Q2 (JOIN on 3 tables) Opening weekend: box office next to Wikipedia attention on the same days
+            title collection_date  weekday  net_cr  wiki_views  rupees_net_per_wiki_view
+Avengers: Endgame      2019-04-26   Friday   53.60     1982874                     270.3
+Avengers: Endgame      2019-04-27 Saturday   52.20     1670364                     312.5
+Avengers: Endgame      2019-04-28   Sunday   52.85     1670405                     316.4
+(3 rows)
+stored: outputs/tables/sql/q2_opening_weekend.csv
+
+=== -- Q3 (GROUP BY + HAVING) Where do the two trade sources disagree, and by how much in total?
+ week_no  days_compared  days_disagree  signed_gap_cr  absolute_gap_cr
+       1              7              0           0.00             0.00
+       2              7              2           0.00             1.00
+       3              7              7           1.63             1.63
+(3 rows)
+stored: outputs/tables/sql/q3_source_disagreement.csv
+
+=== -- Q4 (window function) Trailer attention decay: views on each of the first 14 days after the trailer,
+             title  day_since_trailer  views  pct_of_day0
+Avengers: Doomsday                  0 173712        100.0
+ Avengers: Endgame                  0 165032        100.0
+Avengers: Doomsday                  1 165570         95.3
+ Avengers: Endgame                  1 144358         87.5
+Avengers: Doomsday                  2  87943         50.6
+ Avengers: Endgame                  2 112396         68.1
+Avengers: Doomsday                  3  56905         32.8
+ Avengers: Endgame                  3  81696         49.5
+Avengers: Doomsday                  4  43594         25.1
+ Avengers: Endgame                  4  53792         32.6
+Avengers: Doomsday                  5  38294         22.0
+ Avengers: Endgame                  5  44941         27.2
+Avengers: Doomsday                  6  82627         47.6
+ Avengers: Endgame                  6  37243         22.6
+Avengers: Doomsday                  7  57119         32.9
+ Avengers: Endgame                  7  34236         20.7
+Avengers: Doomsday                  8  43162         24.8
+ Avengers: Endgame                  8  32538         19.7
+Avengers: Doomsday                  9  42703         24.6
+ Avengers: Endgame                  9  33140         20.1
+Avengers: Doomsday                 10  51019         29.4
+ Avengers: Endgame                 10  31604         19.2
+Avengers: Doomsday                 11  57733         33.2
+ Avengers: Endgame                 11  27405         16.6
+Avengers: Doomsday                 12  62377         35.9
+ Avengers: Endgame                 12  25272         15.3
+Avengers: Doomsday                 13  69764         40.2
+ Avengers: Endgame                 13  26939         16.3
+(28 rows)
+stored: outputs/tables/sql/q4_trailer_decay.csv
+
+=== -- Q5 (JOIN + GROUP BY) YouTube trailers: total views/likes per film and language (snapshot counters)
+                   title language  n_videos  total_views  like_rate_pct
+       Avengers: Endgame  English         3    314892373           2.45
+      Avengers: Doomsday  English         8    270732706           2.84
+       Avengers: Endgame    Hindi         2     27074264           2.41
+Avengers Endgame: Encore  English         1     23747191           1.47
+      Avengers: Doomsday    Hindi         1     17957160           2.80
+Avengers Endgame: Encore    Hindi         1      6037843           1.02
+(6 rows)
+stored: outputs/tables/sql/q5_youtube_by_language.csv
+
+=== -- Q6 (GROUP BY) What do reviewers talk about, and how do those reviews rate?
+              theme  n  avg_rating
+extra_scenes_encore 39        8.03
+  format_experience 24        8.83
+      doomsday_hype 23        9.13
+            emotion 20        9.40
+         story_plot 19        8.84
+  characters_acting 18        9.33
+      length_pacing 15        9.00
+         action_vfx 15        8.27
+        price_value 15        5.87
+(9 rows)
+stored: outputs/tables/sql/q6_review_themes.csv
+
+=== -- Q7 (subquery) Doomsday advance: states whose gross per show beats the all-India average
+      state  gross_cr  shows  occupancy_pct  gross_lakh_per_show
+  Karnataka      3.44    227           51.0                 1.52
+Maharashtra      4.90    395           43.0                 1.24
+West Bengal      1.60    130           55.0                 1.23
+(3 rows)
+stored: outputs/tables/sql/q7_advance_gross_per_show.csv
+
+=== -- Q8 (JOIN to CPI) How much of the "real" uplift comes from inflation, month by month
+                   title      month                series_used  cpi_linked_2024  net_cr_nominal  net_cr_real
+       Avengers: Endgame 2019-04-01 2012=100 x 0.5267 (linked)            74.37          215.80       319.34
+       Avengers: Endgame 2019-05-01 2012=100 x 0.5267 (linked)            74.79          153.94       226.52
+Avengers Endgame: Encore 2026-09-01       2024=100 (published)           109.49           25.40        25.53
+Avengers Endgame: Encore 2026-10-01       2024=100 (published)           110.05            5.80         5.80
+(4 rows)
+stored: outputs/tables/sql/q8_inflation_by_month.csv
+
+=== -- Q9 (sentiment vs stars) Does the TF-IDF model agree with the star label, by theme?
+              theme   n  n_compared  agree_pct  avg_rating  avg_model_pos_prob
+        price_value  15          10      100.0        5.87               0.517
+extra_scenes_encore  39          29       96.6        8.03               0.619
+         action_vfx  15          12       75.0        8.27               0.674
+  format_experience  24          18       88.9        8.83               0.673
+         story_plot  19          17       94.1        8.84               0.758
+      length_pacing  15          12       91.7        9.00               0.732
+      doomsday_hype  23          18      100.0        9.13               0.717
+  characters_acting  18          12       91.7        9.33               0.687
+            emotion  20          15       93.3        9.40               0.732
+        ALL_ENGLISH 143         105       90.5        8.66               0.659
+(10 rows)
+stored: outputs/tables/sql/q9_sentiment_vs_stars.csv
+
+9 queries ran OK

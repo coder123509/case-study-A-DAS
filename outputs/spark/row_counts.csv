@@ -1,0 +1,4 @@
+source,film_key,count
+imdb_50k_corpus,NO_FILM (practice corpus),49576
+rotten_tomatoes,AVG_ENDGAME_2019,140
+imdb,AVG_ENDGAME_2019,5

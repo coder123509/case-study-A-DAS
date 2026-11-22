@@ -1,0 +1,4 @@
+source,film_key,n,pct_story_plot,pct_length_pacing,pct_emotion,pct_action_vfx,pct_acting,pct_music,pct_price_value
+imdb,AVG_ENDGAME_2019,5,100.0,20.0,40.0,40.0,20.0,20.0,0.0
+imdb_50k_corpus,NO_FILM (practice corpus),49576,50.5,20.84,4.97,20.91,47.91,17.22,19.33
+rotten_tomatoes,AVG_ENDGAME_2019,140,7.86,8.57,7.86,8.57,1.43,0.0,7.86

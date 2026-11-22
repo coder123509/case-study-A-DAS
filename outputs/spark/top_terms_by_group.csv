@@ -1,0 +1,76 @@
+source,film_key,term,count,rank
+imdb,AVG_ENDGAME_2019,marvel,13,1
+imdb,AVG_ENDGAME_2019,infinity,10,2
+imdb,AVG_ENDGAME_2019,films,9,3
+imdb,AVG_ENDGAME_2019,war,9,4
+imdb,AVG_ENDGAME_2019,ever,5,5
+imdb,AVG_ENDGAME_2019,characters,5,6
+imdb,AVG_ENDGAME_2019,story,5,7
+imdb,AVG_ENDGAME_2019,battle,5,8
+imdb,AVG_ENDGAME_2019,endgame,4,9
+imdb,AVG_ENDGAME_2019,good,4,10
+imdb,AVG_ENDGAME_2019,part,4,11
+imdb,AVG_ENDGAME_2019,epic,4,12
+imdb,AVG_ENDGAME_2019,fans,4,13
+imdb,AVG_ENDGAME_2019,avengers,4,14
+imdb,AVG_ENDGAME_2019,feel,4,15
+imdb,AVG_ENDGAME_2019,superhero,4,16
+imdb,AVG_ENDGAME_2019,thanos,4,17
+imdb,AVG_ENDGAME_2019,captain,3,18
+imdb,AVG_ENDGAME_2019,end,3,19
+imdb,AVG_ENDGAME_2019,plot,3,20
+imdb,AVG_ENDGAME_2019,best,3,21
+imdb,AVG_ENDGAME_2019,done,3,22
+imdb,AVG_ENDGAME_2019,new,3,23
+imdb,AVG_ENDGAME_2019,lots,3,24
+imdb,AVG_ENDGAME_2019,right,3,25
+imdb_50k_corpus,NO_FILM (practice corpus),good,29542,1
+imdb_50k_corpus,NO_FILM (practice corpus),story,22970,2
+imdb_50k_corpus,NO_FILM (practice corpus),well,21108,3
+imdb_50k_corpus,NO_FILM (practice corpus),bad,18289,4
+imdb_50k_corpus,NO_FILM (practice corpus),people,18022,5
+imdb_50k_corpus,NO_FILM (practice corpus),great,18017,6
+imdb_50k_corpus,NO_FILM (practice corpus),first,17430,7
+imdb_50k_corpus,NO_FILM (practice corpus),way,15516,8
+imdb_50k_corpus,NO_FILM (practice corpus),movies,15223,9
+imdb_50k_corpus,NO_FILM (practice corpus),characters,14320,10
+imdb_50k_corpus,NO_FILM (practice corpus),character,13805,11
+imdb_50k_corpus,NO_FILM (practice corpus),films,13667,12
+imdb_50k_corpus,NO_FILM (practice corpus),two,13428,13
+imdb_50k_corpus,NO_FILM (practice corpus),many,13360,14
+imdb_50k_corpus,NO_FILM (practice corpus),love,12914,15
+imdb_50k_corpus,NO_FILM (practice corpus),plot,12889,16
+imdb_50k_corpus,NO_FILM (practice corpus),never,12880,17
+imdb_50k_corpus,NO_FILM (practice corpus),life,12818,18
+imdb_50k_corpus,NO_FILM (practice corpus),acting,12763,19
+imdb_50k_corpus,NO_FILM (practice corpus),best,12545,20
+imdb_50k_corpus,NO_FILM (practice corpus),show,12492,21
+imdb_50k_corpus,NO_FILM (practice corpus),little,12322,22
+imdb_50k_corpus,NO_FILM (practice corpus),ever,11940,23
+imdb_50k_corpus,NO_FILM (practice corpus),man,11753,24
+imdb_50k_corpus,NO_FILM (practice corpus),better,11339,25
+rotten_tomatoes,AVG_ENDGAME_2019,scenes,34,1
+rotten_tomatoes,AVG_ENDGAME_2019,good,27,2
+rotten_tomatoes,AVG_ENDGAME_2019,great,26,3
+rotten_tomatoes,AVG_ENDGAME_2019,doomsday,23,4
+rotten_tomatoes,AVG_ENDGAME_2019,avengers,23,5
+rotten_tomatoes,AVG_ENDGAME_2019,still,21,6
+rotten_tomatoes,AVG_ENDGAME_2019,endgame,19,7
+rotten_tomatoes,AVG_ENDGAME_2019,infinity,18,8
+rotten_tomatoes,AVG_ENDGAME_2019,scene,17,9
+rotten_tomatoes,AVG_ENDGAME_2019,end,17,10
+rotten_tomatoes,AVG_ENDGAME_2019,marvel,16,11
+rotten_tomatoes,AVG_ENDGAME_2019,credit,15,12
+rotten_tomatoes,AVG_ENDGAME_2019,encore,14,13
+rotten_tomatoes,AVG_ENDGAME_2019,first,13,14
+rotten_tomatoes,AVG_ENDGAME_2019,new,12,15
+rotten_tomatoes,AVG_ENDGAME_2019,worth,11,16
+rotten_tomatoes,AVG_ENDGAME_2019,minutes,10,17
+rotten_tomatoes,AVG_ENDGAME_2019,got,10,18
+rotten_tomatoes,AVG_ENDGAME_2019,post,10,19
+rotten_tomatoes,AVG_ENDGAME_2019,theater,10,20
+rotten_tomatoes,AVG_ENDGAME_2019,loved,10,21
+rotten_tomatoes,AVG_ENDGAME_2019,ending,9,22
+rotten_tomatoes,AVG_ENDGAME_2019,back,9,23
+rotten_tomatoes,AVG_ENDGAME_2019,credits,9,24
+rotten_tomatoes,AVG_ENDGAME_2019,love,9,25

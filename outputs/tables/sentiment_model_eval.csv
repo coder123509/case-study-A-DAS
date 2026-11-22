@@ -1,1 +1,5 @@
-
+method,test_set,n,accuracy,f1
+TF-IDF + LogReg,IMDb 50K held-out 20%,9917,0.9076,0.9094
+VADER,IMDb 50K held-out (5k sample),5000,0.7016,0.7463
+VADER,"our reviews, stars as label",113,0.8407,
+TF-IDF + LogReg,"our reviews, stars as label",105,0.9048,

@@ -1,0 +1,4 @@
+total rows processed: 49721
+spark version: 4.3.0
+partitions: 8
+runtime seconds: 31.3

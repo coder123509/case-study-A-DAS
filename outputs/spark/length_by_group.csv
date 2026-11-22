@@ -1,0 +1,7 @@
+source,film_key,label,n,avg_words,median_words,avg_chars
+imdb,AVG_ENDGAME_2019,positive,5,243.6,192,1305.8
+imdb_50k_corpus,NO_FILM (practice corpus),negative,24695,232.8,177,1294.8
+imdb_50k_corpus,NO_FILM (practice corpus),positive,24881,236.0,175,1326.4
+rotten_tomatoes,AVG_ENDGAME_2019,mixed,7,42.0,24,231.3
+rotten_tomatoes,AVG_ENDGAME_2019,negative,15,29.7,16,153.6
+rotten_tomatoes,AVG_ENDGAME_2019,positive,118,25.4,14,137.2

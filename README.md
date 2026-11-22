@@ -47,13 +47,14 @@ release-day-radar/
 ├── sql/
 │   ├── schema.sql            8 tables, primary/foreign keys
 │   ├── load_data.sql         loads data/processed/*.csv
-│   ├── queries.sql           8 queries (JOINs, GROUP BY, HAVING, subquery, window function)
+│   ├── queries.sql           9 queries (JOINs, GROUP BY, HAVING, subquery, window function)
 │   └── check_queries_sqlite.py   smoke test of the queries without a MySQL server
 ├── spark/pyspark_text_job.py PySpark job over ≥ 50,000 review rows
 ├── spreadsheet/              one cleaning step done in Excel + the same step in pandas
 ├── outputs/
-│   ├── charts/               c1 … c7 PNGs
+│   ├── charts/               c1 … c7 PNGs, plus charts/sql/ for Q1, Q3 and Q9
 │   └── tables/               cleaning_log.csv, key_numbers.csv, radar_checklist.csv, …
+│       └── sql/              full result of each query, plus query_results.txt
 └── docs/                     source register, data inventory, V profile, ER diagram,
                               cleaning log, spreadsheet-vs-pandas note, findings notes,
                               AI disclosure + team contribution templates
@@ -79,7 +80,7 @@ Then copy the Homework 1.2 file to `data/raw/imdb_50k_corpus/IMDB Dataset.csv` (
 |---|---|---|
 | 1. Pipeline (raw → charts) | `python run_pipeline.py` | `data/interim/`, `data/processed/`, `outputs/charts/`, `outputs/tables/`, `docs/cleaning_log.md` |
 | 2. MySQL | `mysql -u root -p < sql/schema.sql` <br> `mysql --local-infile=1 -u root -p release_day_radar < sql/load_data.sql` <br> `mysql -u root -p release_day_radar < sql/queries.sql` | database `release_day_radar` with 8 tables, row counts printed at the end of the load |
-| 2b. (no MySQL handy) | `python sql/check_queries_sqlite.py` | runs the same 8 queries on SQLite as a quick check |
+| 2b. (no MySQL handy) | `python sql/check_queries_sqlite.py` | runs the same 9 queries on SQLite, writes every row to `outputs/tables/sql/`, and charts Q1, Q3 and Q9 (the ones c1–c7 do not already show) |
 | 3. PySpark | `python spark/pyspark_text_job.py` (or `spark-submit spark/pyspark_text_job.py`) | `outputs/spark/` - row counts, length stats, top terms, theme shares, run time |
 | 4. Spreadsheet vs pandas | open `spreadsheet/endgame_daywise_cleaning.xlsx`, then `python spreadsheet/compare_with_pandas.py` | proof both tools give the same 21 rows |
 | 5. (optional) fresh API data | `python src/collect/fetch_wikimedia_pageviews.py` · `python src/collect/fetch_wikidata_metadata.py` · `python src/collect/youtube_api_collector.py --comments` (needs `YT_API_KEY`) | updated raw files; rerun step 1 |
@@ -113,7 +114,7 @@ Rules we followed: official APIs where they exist, no logins, no usernames or pr
 | 3 Vs | `docs/v_profile.md` |
 | 3+ sources, 1+ JSON API, all three shapes | `docs/source_register.md` (10 sources incl. 2 JSON APIs, + the practice corpus) |
 | `json_normalize` | `src/s01_flatten_json.py` |
-| MySQL, ≥3 related tables, ER diagram, 5+ queries with JOIN + GROUP BY | `sql/schema.sql`, `docs/er_diagram.md`, `sql/queries.sql` (8 queries) |
+| MySQL, ≥3 related tables, ER diagram, 5+ queries with JOIN + GROUP BY | `sql/schema.sql`, `docs/er_diagram.md`, `sql/queries.sql` (9 queries) |
 | Spreadsheet vs pandas | `spreadsheet/`, `docs/spreadsheet_vs_pandas.md` |
 | Missing values, type casting, film-name matching | `docs/cleaning_log.md` (45 logged decisions), `src/utils.py` |
 | Normalisation | chart c1 (launch day = 100 index + min-max column in `outputs/tables/trailer_window_14d.csv`), c2 (z-scores), c5 (% of day 1); inflation separately in c3 |
