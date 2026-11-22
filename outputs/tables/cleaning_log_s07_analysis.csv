@@ -1,0 +1,4 @@
+step,dataset,problem,rows_affected,action,reason
+s07_analysis,wikimedia_pageviews,Endgame and Doomsday pages have very different daily scale,28,added index_day0 (launch day = 100) and min-max columns for the 14-day trailer window; chart c1 plots the index,normalisation: puts films of different size on one footing; the raw view counts are kept next to it
+s07_analysis,box_office + wikimedia_pageviews,views and net collection cannot share one axis,28,z-score of each series over the same 28 days for chart c2 (correlation r is unchanged by this step),"normalisation: one footing for two units, no dual axis"
+s07_analysis,daily_collections,"Endgame (2019) and the Encore re-release (2026) differ about 10x in rupees, so their decay curves cannot be compared raw",69,"each day as % of that film's own day-1 net (chart c5, Monday test)","normalisation: compares shape of decay, not size; the rupee amounts are compared separately after the CPI step"

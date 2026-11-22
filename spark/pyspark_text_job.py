@@ -67,6 +67,7 @@ if any(yt_dir.glob("*.csv")):
 df = frames[0]
 for f in frames[1:]:
     df = df.unionByName(f)
+rows_read = df.count()                            # before empty-text drops and de-duplication
 
 # ------------------------------------------------------------------ 1. clean
 df = (df.filter(F.col("text").isNotNull())
@@ -126,7 +127,9 @@ theme_share = df.groupBy("source", "film_key").agg(*agg).orderBy("source", "film
 theme_share.toPandas().to_csv(OUT / "theme_share_by_group.csv", index=False)
 
 elapsed = time.time() - t0
-info = (f"total rows processed: {total_rows}\n"
+info = (f"rows read: {rows_read}\n"
+        f"rows removed while cleaning: {rows_read - total_rows}\n"
+        f"rows after cleaning and de-duplication: {total_rows}\n"
         f"spark version: {spark.version}\n"
         f"partitions: {df.rdd.getNumPartitions()}\n"
         f"runtime seconds: {elapsed:.1f}\n")

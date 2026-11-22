@@ -111,7 +111,7 @@ WITH scored AS (
     FROM reviews
     WHERE lang = 'en' AND model_pos_prob IS NOT NULL
 ),
-long AS (
+theme_rows AS (
     SELECT 'story_plot' AS theme, theme_story_plot AS hit, rating_10, rating_label, model_label, model_pos_prob FROM scored
     UNION ALL SELECT 'length_pacing', theme_length_pacing, rating_10, rating_label, model_label, model_pos_prob FROM scored
     UNION ALL SELECT 'emotion', theme_emotion, rating_10, rating_label, model_label, model_pos_prob FROM scored
@@ -129,7 +129,7 @@ by_theme AS (
            SUM(CASE WHEN hit = 1 AND rating_label IN ('positive','negative') AND model_label = rating_label THEN 1 ELSE 0 END) AS n_agree,
            AVG(CASE WHEN hit = 1 THEN rating_10 END) AS avg_rating,
            AVG(CASE WHEN hit = 1 THEN model_pos_prob END) AS avg_model_pos_prob
-    FROM long
+    FROM theme_rows
     GROUP BY theme
 ),
 overall AS (

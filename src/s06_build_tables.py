@@ -43,12 +43,12 @@ films["runtime_min"] = pd.to_numeric(films["runtime_min"]).astype("Int64")
 log.add("films", "Encore has no Wikidata entry of its own", 1,
         "genres copied from the parent film (same film + extra scenes), parent_film_id = 1", "re-release of the same title")
 key2id = dict(zip(films["film_key"], films["film_id"]))
-films.to_csv(PROCESSED / "films.csv", index=False)
+films.to_csv(PROCESSED / "films.csv", index=False, lineterminator="\n")
 
 # ------------------------------------------------------------------ cpi_monthly
 cpi = pd.read_csv(INTERIM / "cpi_monthly.csv", parse_dates=["month"])
 cpi["month"] = cpi["month"].dt.strftime("%Y-%m-01")
-cpi.to_csv(PROCESSED / "cpi_monthly.csv", index=False)
+cpi.to_csv(PROCESSED / "cpi_monthly.csv", index=False, lineterminator="\n")
 
 # ------------------------------------------------------------------ daily_collections
 d = pd.read_csv(INTERIM / "daily_collections_real.csv", parse_dates=["date"])
@@ -66,7 +66,7 @@ dc = d.rename(columns={"date": "collection_date"})[[
 dc["collection_date"] = dc["collection_date"].dt.strftime("%Y-%m-%d")
 for b in ["is_weekend", "is_approx"]:
     dc[b] = dc[b].astype(int)
-dc.to_csv(PROCESSED / "daily_collections.csv", index=False)
+dc.to_csv(PROCESSED / "daily_collections.csv", index=False, lineterminator="\n")
 
 # ------------------------------------------------------------------ wiki_pageviews
 pv = pd.read_csv(INTERIM / "pageviews_daily.csv", parse_dates=["date"])
@@ -74,7 +74,7 @@ pv["film_id"] = pv["film_key"].map(key2id)
 pv = pv.rename(columns={"date": "view_date"})
 pv["view_date"] = pv["view_date"].dt.strftime("%Y-%m-%d")
 pv["pre_title_reveal"] = pv["pre_title_reveal"].astype(int)
-pv[["film_id", "view_date", "project", "article", "views", "pre_title_reveal"]].to_csv(PROCESSED / "wiki_pageviews.csv", index=False)
+pv[["film_id", "view_date", "project", "article", "views", "pre_title_reveal"]].to_csv(PROCESSED / "wiki_pageviews.csv", index=False, lineterminator="\n")
 
 # ------------------------------------------------------------------ youtube_videos
 yt = pd.read_csv(INTERIM / "youtube_videos.csv")
@@ -84,7 +84,7 @@ yt["snapshot_taken_at"] = pd.to_datetime(yt["snapshot_taken_at"]).dt.tz_convert(
 yt = yt.rename(columns={"channelTitle": "channel", "durationSeconds": "duration_sec", "viewCount": "view_count",
                         "likeCount": "like_count", "commentCount": "comment_count"})
 yt[["video_id", "film_id", "title", "channel", "language", "published_at", "duration_sec", "view_count",
-    "like_count", "comment_count", "days_online_at_snapshot", "snapshot_taken_at"]].to_csv(PROCESSED / "youtube_videos.csv", index=False)
+    "like_count", "comment_count", "days_online_at_snapshot", "snapshot_taken_at"]].to_csv(PROCESSED / "youtube_videos.csv", index=False, lineterminator="\n")
 
 # ------------------------------------------------------------------ reviews
 r = pd.read_csv(INTERIM / "reviews_scored.csv", parse_dates=["review_date"])
@@ -93,10 +93,11 @@ r["review_date"] = r["review_date"].dt.strftime("%Y-%m-%d")
 theme_cols = [c for c in r.columns if c.startswith("theme_")]
 for c in theme_cols + ["is_short", "is_text_duplicate"]:
     r[c] = r[c].astype(int)
+r["text"] = r["text"].astype(str).str.replace("\r", "", regex=False)
 r["verified"] = r["verified"].map({True: 1, False: 0, "True": 1, "False": 0})
 r[["review_id", "film_id", "source", "viewing_context", "review_date", "rating_10", "rating_label", "verified", "lang",
    "n_words", "is_short", "is_text_duplicate", "vader_compound", "model_pos_prob"] + theme_cols + ["text"]].to_csv(
-    PROCESSED / "reviews.csv", index=False)
+    PROCESSED / "reviews.csv", index=False, lineterminator="\n")
 
 # ------------------------------------------------------------------ advance_booking
 adv = pd.read_csv(INTERIM / "advance_booking_day1.csv")
@@ -107,14 +108,14 @@ adv["is_others_bucket"] = adv["is_others_bucket"].astype(int)
 adv.insert(0, "booking_row_id", range(1, len(adv) + 1))
 adv[["booking_row_id", "film_id", "snapshot_at", "show_date", "level", "area", "gross_cr", "gross_cr_wo_block",
      "tickets_int", "shows_int", "occupancy_pct", "atp_rs", "atp_rs_derived", "is_others_bucket"]].rename(
-    columns={"tickets_int": "tickets", "shows_int": "shows"}).to_csv(PROCESSED / "advance_booking.csv", index=False)
+    columns={"tickets_int": "tickets", "shows_int": "shows"}).to_csv(PROCESSED / "advance_booking.csv", index=False, lineterminator="\n")
 
 # ------------------------------------------------------------------ release_schedule
 rs = pd.read_csv(RAW / "manual_compiled" / "release_timing.csv")
 title2key = {v["title"]: k for k, v in FILMS.items()}
 rs["film_id"] = rs["film"].map(title2key).map(key2id)
 rs[["film_id", "india_release_date", "weekday", "other_release_note", "first_show_note", "show_screen_note",
-    "source_name", "source_url"]].to_csv(PROCESSED / "release_schedule.csv", index=False)
+    "source_name", "source_url"]].to_csv(PROCESSED / "release_schedule.csv", index=False, lineterminator="\n")
 
 for f in sorted(PROCESSED.glob("*.csv")):
     print(f"{f.name:28s} {sum(1 for _ in open(f, encoding='utf-8')) - 1:>5} rows")

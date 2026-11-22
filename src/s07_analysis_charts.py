@@ -11,6 +11,9 @@ import matplotlib.pyplot as plt
 import matplotlib.dates as mdates
 
 from config import INTERIM, TABLES, CHARTS, TRAILER_DAY0
+from utils import CleaningLog
+
+log = CleaningLog("s07_analysis")
 
 # ---- one look for every chart (colours = fixed per film, never by rank)
 COL = {"AVG_ENDGAME_2019": "#2a78d6", "AVG_DOOMSDAY_2026": "#eb6834", "AVG_ENCORE_2026": "#1baf7a"}
@@ -53,6 +56,11 @@ for key, d0 in TRAILER_DAY0.items():
     win.append(g)
 win = pd.concat(win)
 win.to_csv(TABLES / "trailer_window_14d.csv", index=False)
+log.add("wikimedia_pageviews",
+        "Endgame and Doomsday pages have very different daily scale",
+        len(win),
+        "added index_day0 (launch day = 100) and min-max columns for the 14-day trailer window; chart c1 plots the index",
+        "normalisation: puts films of different size on one footing; the raw view counts are kept next to it")
 
 d3 = win[win.day == 3].set_index("film_key")["index_day0"]
 tot = win.groupby("film_key")["views"].sum()
@@ -228,6 +236,19 @@ ax.set_ylabel("Day-1 advance gross per show (₹ lakh)")
 south_hot = st[st.occupancy_pct >= 60]["area"].tolist()
 ax.set_title(f"Where to add shows first: {', '.join(south_hot)} are already 60%+ full, 26 days out")
 save(fig, "c7_doomsday_advance_by_state.png", "Sacnilk advance-booking tracker, data as of 21-Nov-2026 18:50 IST (bubble size = shows).")
+
+log.add("box_office + wikimedia_pageviews",
+        "views and net collection cannot share one axis",
+        len(both),
+        "z-score of each series over the same 28 days for chart c2 (correlation r is unchanged by this step)",
+        "normalisation: one footing for two units, no dual axis")
+compared = daily[daily.film_key.isin(["AVG_ENDGAME_2019", "AVG_ENCORE_2026"])]
+log.add("daily_collections",
+        "Endgame (2019) and the Encore re-release (2026) differ about 10x in rupees, so their decay curves cannot be compared raw",
+        int(len(compared)),
+        "each day as % of that film's own day-1 net (chart c5, Monday test)",
+        "normalisation: compares shape of decay, not size; the rupee amounts are compared separately after the CPI step")
+log.save()
 
 pd.DataFrame(key_numbers).to_csv(TABLES / "key_numbers.csv", index=False)
 print(pd.DataFrame(key_numbers).to_string())

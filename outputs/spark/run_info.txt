@@ -1,4 +1,6 @@
-total rows processed: 49721
+rows read: 50145
+rows removed while cleaning: 424
+rows after cleaning and de-duplication: 49721
 spark version: 4.3.0
 partitions: 8
-runtime seconds: 31.3
+runtime seconds: 26.9
