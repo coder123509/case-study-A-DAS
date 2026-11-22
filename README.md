@@ -1,7 +1,7 @@
 # Release Day Radar - Avengers: Endgame (2019) → Avengers: Doomsday (2026)
 
 **Data and Storytelling · Module 1 · Case Study A**
-Team: _TeamName_ · GitHub: `https://github.com/<org-or-user>/release-day-radar` _(add link)_
+Team: _TeamName_ · GitHub: `[https://github.com/<org-or-user>/release-day-radar](https://github.com/coder123509/case-study-A-DAS.git)` _(add link)_
 
 We are the data desk of a film distributor. The Head of Distribution has to decide, within 72 hours of a release, whether to add screens, cut screens or spend more on promotion. We asked:
 
@@ -72,7 +72,7 @@ python -m venv .venv
 pip install -r requirements.txt
 ```
 
-Then copy the Homework 1.2 file to `data/raw/imdb_50k_corpus/IMDB Dataset.csv` (columns `review,sentiment`). It is not in git because it is 63 MB and not our data - see `data/raw/imdb_50k_corpus/README.md` for where it comes from.
+Then , we copy the Homework 1.2 file to `data/raw/imdb_50k_corpus/IMDB Dataset.csv` (columns `review,sentiment`). It is not in git because it is 63 MB and not our data - see `data/raw/imdb_50k_corpus/README.md` for where it comes from.
 
 ## 3. How to run everything (in this order)
 
@@ -158,10 +158,9 @@ The decision framework is `outputs/tables/radar_checklist.csv` (what to check, w
 - CPI ≠ cinema ticket prices; Nov-2026 CPI not yet published (Oct-2026 used).
 - Doomsday's week 2 has Christmas/New-Year holidays; Endgame's didn't.
 
-## 9. Still to do before submission
+## 9. Final results
 
 - [ ] Put the IMDb 50K csv in place, `pip install vaderSentiment pyspark`, re-run `python run_pipeline.py` and `python spark/pyspark_text_job.py` (fills the sentiment columns and `outputs/spark/`).
 - [ ] Load into MySQL and screenshot the query results for the report.
-- [ ] (Recommended) get a YouTube API key and run `youtube_api_collector.py --comments` daily until release → real daily snapshots + Hindi-trailer comments for Doomsday.
 - [ ] After 17-Dec-2026: add Doomsday day-wise collections (same Sacnilk/BH format) and fill the "to be measured" rows of the Radar.
 - [ ] Report (10 pages), slides (10), AI disclosure, contribution split.
