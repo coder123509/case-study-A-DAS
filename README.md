@@ -1,7 +1,7 @@
 # Release Day Radar - Avengers: Endgame (2019) → Avengers: Doomsday (2026)
 
 **Data and Storytelling · Module 1 · Case Study A**
-Team: _TeamName_ · GitHub: `https://github.com/coder123509/case-study-A-DAS.git` _(add link)_
+Team Members:1)Abhinav Krishna Rayachoti 2)Aayushh K P Naik 3)Abhishek Varma · GitHub: [case-study-A-DAS](https://github.com/coder123509/case-study-A-DAS)
 
 We are the data desk of a film distributor. The Head of Distribution has to decide, within 72 hours of a release, whether to add screens, cut screens or spend more on promotion. We asked:
 
