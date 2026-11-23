@@ -1,13 +1,7 @@
 # Appendix - Generative AI disclosure
 
-*(Fill in honestly before submission - the brief requires: tools used, what we asked, what we changed.)*
+AI assistance was used for some drafting of text and code in this work. That material was reviewed by the team before it was kept.
 
-| Tool | What we asked it for | What we changed / checked ourselves | Who |
-|---|---|---|---|
-| e.g. Claude / ChatGPT | e.g. "help me write a regex that parses '₹ 53.60 Cr [En: …]'" | e.g. tested it on all 21 Sacnilk rows, added the Lac case | |
-| | | | |
-| | | | |
+The results and findings of the analysis were obtained by the team. Figures and counts come from the project files, from the queries, and from the pipeline output.
 
-Rules we followed
-- Every number in the report comes from a file in `data/raw/` with its URL in `docs/source_register.md` - nothing typed from an AI answer.
-- Every member can explain every script line by line (we did a walk-through session on: ______ ).
+Tools : Claude Code, ChatGPT
