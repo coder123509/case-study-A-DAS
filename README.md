@@ -162,4 +162,40 @@ The decision framework is `outputs/tables/radar_checklist.csv` (what to check, w
 
 ## 9. Final results
 
+### 9.1 What we answered
+Online attention moves closely with ticket sales, but one past film and one re-release are not enough to forecast. So our result is a **Release Day Radar**: a checklist of what to watch, when, the benchmark to compare against, and the action to take (`outputs/tables/radar_checklist.csv`).
 
+### 9.2 Main findings
+1. **Attention and sales move together.** Endgame's daily Wikipedia views and daily India net collections correlate at r = 0.97 over days 1-28. It stays at r = 0.89 on days 8-28 only, so it is not just the opening-week spike. Both are driven by the release itself, so this is not proof of cause.
+2. **Doomsday's trailer buzz faded faster.** On day 3 of the 14-day trailer window it kept 33% of its launch-day attention, against 50% for Endgame. Its window did have more total views (1.03M vs 0.85M).
+3. **The Monday test separates a strong run from a weak one.** Endgame kept 58% of its Friday collection on Monday. The Encore re-release kept 31%. On the second Friday, Endgame held 22% of its first Friday and Encore 17%.
+4. **Inflation changes the comparison.** Prices rose about 48% between April 2019 and October 2026 (CPI factor 1.4798). Endgame's India run is worth about Rs 552 Cr in today's money, not Rs 373 Cr. A Rs 215 ticket in 2019 equals about Rs 318 now, while Doomsday fans are paying Rs 699.
+5. **Value for money hurts reviews most.** Reviews that mention value for money average 5.9/10, against 8.9 for all other reviews.
+6. **Early Doomsday advance booking is uneven.** About 26 days before release, Kerala, Telangana and Tamil Nadu were already over 60% full.
+7. **Opening-day scenarios for Doomsday** (assumptions are in `outputs/tables/doomsday_opening_scenarios.csv`): Rs 53.6 Cr, Rs 79.3 Cr and Rs 94.0 Cr net. These are planning scenarios, not predictions.
+
+### 9.3 What the Radar tells the Head of Distribution
+- **Before release:** track trailer-window attention against Endgame's fade curve, advance booking by state, and review themes.
+- **Day 1-3:** compare daily net with the 58% (Endgame) and 31% (Encore) Monday benchmarks to decide whether to add or cut screens.
+- **Week 2:** use the second-Friday benchmarks (22% / 17%), but treat Doomsday's week 2 carefully because it includes Christmas and New Year.
+- **After 17-Dec-2026:** add Doomsday's real day-wise collections and fill the "to be measured" rows of the Radar.
+
+### 9.4 Results from the technical work
+| Item | Result |
+|---|---|
+| Data shapes covered | Structured, semi-structured (JSON APIs, flattened with `json_normalize`) and unstructured (reviews) |
+| Sources | 10 public sources plus the IMDb 50K practice corpus; nothing fabricated |
+| Cleaning log | 49 logged decisions (missing values, types, film-name matching, normalisation) |
+| MySQL | 8 tables with primary and foreign keys; row counts in section 7 match the pipeline; query outputs in `images/` |
+| PySpark | 50,145 rows read, 49,721 analysed after removing empty and duplicate texts, 424 dropped |
+| Sentiment | VADER and TF-IDF + logistic regression compared; about 90% accuracy on IMDb 50K (exact figures in `outputs/tables/sentiment_model_eval.csv`) |
+| Spreadsheet vs pandas | Same 21 rows from both tools |
+| Charts | 7 charts with findings as titles; c2, c3 and c4 combine more than one source |
+
+### 9.5 Limits
+- One past film and one re-release cannot support a predictive model.
+- English Wikipedia attention is global, not India-only.
+- 145 reviews, all Rotten Tomatoes ones from the 2026 re-release period are not all moviegoers.
+- Trade sources disagree (Endgame lifetime 370.05 / 373.05 / 373.22 Cr), so we show ranges.
+- CPI is general inflation, not cinema ticket pricing. October 2026 CPI was used because November is not yet published.
+- YouTube API v3 could not be used to scrape live youtube content due to constraints. Instead, we used alternatives like IMDb and Rotten Tomatoes reviews.
