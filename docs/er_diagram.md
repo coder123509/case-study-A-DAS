@@ -1,6 +1,6 @@
 # ER diagram
 
-GitHub renders this Mermaid diagram automatically. For the report, paste it into https://mermaid.live and export a PNG.
+
 
 ```mermaid
 erDiagram
