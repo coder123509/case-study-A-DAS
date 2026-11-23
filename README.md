@@ -1,7 +1,7 @@
 # Release Day Radar - Avengers: Endgame (2019) → Avengers: Doomsday (2026)
 
 **Data and Storytelling · Module 1 · Case Study A**
-Team Members:1)Abhinav Krishna Rayachoti 2)Aayushh K P Naik 3)Abhishek Varma · GitHub: [case-study-A-DAS](https://github.com/coder123509/case-study-A-DAS)
+Team Members:1)Abhinav Krishna Rayachoti 2)Aayushh K P Naik 3)Abhishek Varma · GitHub: [case-study-A-DAS](https://github.com/coder123509/case-study-A-DAS.git)
 
 We are the data desk of a film distributor. The Head of Distribution has to decide, within 72 hours of a release, whether to add screens, cut screens or spend more on promotion. We asked:
 
@@ -65,8 +65,8 @@ release-day-radar/
 You need **Python 3.10+**. For SQL: **MySQL 8**. For Spark: **Java 8, 11 or 17** (check with `java -version`).
 
 ```bash
-git clone https://github.com/<org-or-user>/release-day-radar.git
-cd release-day-radar
+git clone https://github.com/coder123509/case-study-A-DAS.git
+cd case-study-A-DAS
 python -m venv .venv
 # Windows:  .venv\Scripts\activate      mac/linux:  source .venv/bin/activate
 pip install -r requirements.txt
