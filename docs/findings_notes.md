@@ -1,6 +1,6 @@
-# Findings notes (working draft for the report & slides)
+# Findings notes
 
-All numbers come from `outputs/tables/` after `python run_pipeline.py`. If you re-run with new data, update this file from those tables, don't type numbers from memory.
+All numbers come from `outputs/tables/` after `python run_pipeline.py`. 
 
 ## The question
 To what extent can online attention, engagement and sentiment around *Avengers: Endgame* (2019) and *Avengers: Doomsday* (17-Dec-2026) help anticipate Indian theatrical demand - and how should release timing, genre, show availability and inflation be handled when deciding screens and promotion?
